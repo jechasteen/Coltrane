@@ -162,9 +162,21 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#abstract" id="abstract">Abstract</a></h1>
-<p>This paper describes a language for expressing the abstracted chord progression and linear control flow of musical compositions. Coltrane is written in a simple, human-readable plain text format using <a href="https://en.wikipedia.org/wiki/Roman_numeral_analysis">roman numeral analysis (RNA)</a> tokens and control flow structures. Melodic content is beyond the scope of the language. </p>
-<p>The ideas behind Coltrane -- RNA and chord alteration/augmentation -- are well established music theory. However, there is <a href="https://xkcd.com/927/">some disagreement</a> among theorists as to what can and should be expressed in the analysis and how. A computer requires exacting rules to do its job; a computer makes no mistakes, as the saying goes. This unfortunately means that we must make decisions because the computer can't. It would be burdensome and error-prone to support the parsing of multiple RNA styles, therefore there can only be one set of rules. This, of course, does not preclude future rule additions. We could, for instance, add support for two syntactically different ways to write the same chord expression. Coltrane is open to requests for comment (RFCs) if you disagree with the rules proposed here, or for any other comment or criticism. RFCs should be submitted as a new issue at the repository on GitHub using the RFC template.</p>
-<p>Although there is a wealth of jazz education literature in the form of method books, etudes, and play-a-longs, there is yet an opportunity to further advance pedagogy with computing power. Developers could theoretically use the language interpreter to create an infinite number of exercises based on a chord progression! Coltrane, for the uninitiated, was a saxophonist who they say practiced 12 hours a day and was 20 feet tall. The motivation behind the development of this language is to help us to find new relationships between chords and musical lines <strong>by playing our  instruments</strong>.</p>
+<p>This paper describes a language for expressing the abstracted chord progression and linear control flow of musical compositions.
+Coltrane is written in a simple, human-readable plain text format using <a href="https://en.wikipedia.org/wiki/Roman_numeral_analysis">roman numeral analysis (RNA)</a> tokens and control flow structures.
+Melodic content is beyond the scope of the language.</p>
+<p>The ideas behind Coltrane -- RNA and chord alteration/augmentation -- are well established music theory.
+However, there is <a href="https://xkcd.com/927/">some disagreement</a> among theorists as to what can and should be expressed in the analysis and how.
+A computer requires the programmer to tell it exactly what to do.
+A computer makes no mistakes, as the saying goes.
+This unfortunately means that we must make decisions because the computer can't, at least not yet.
+It would be burdensome and error-prone to support the parsing of multiple RNA styles, therefore there can only be one set of rules.
+This, of course, does not preclude future rule additions and/or alterations.
+For instance, support could be added for two syntactically different ways to write the same chord expression.</p>
+<p>Although there is a wealth of jazz education literature in the form of method books, etudes, and play-a-longs, there is yet an opportunity to further advance pedagogy with computing power.
+The computer can do some of the thinking, which leaves more time for the woodshed.
+Developers could theoretically use the language interpreter to create an infinite number of exercises based on a chord progression!
+John Coltrane, for the uninitiated, was a saxophonist who they say practiced 12 hours a day and was 20 feet tall. The motivation behind the development of this language is to help us to find new relationships between chords and musical lines <strong>by playing our  instruments</strong>.</p>
 <h1><a class="header" href="#music-theory-primer" id="music-theory-primer">Music Theory Primer</a></h1>
 <p>Chord progression</p>
 <p>Degree of the scale</p>
@@ -172,23 +184,49 @@
 <p>Key</p>
 <p>Scale</p>
 <p>Triad</p>
+<p>Wholetone and Semitone</p>
 <h1><a class="header" href="#natural-triads" id="natural-triads">Natural Triads</a></h1>
-<p>RNA provides a method of abstracting a chord progression away from the key it was composed in. In this system, each step or degree of the scale has an associated triad that is built upon by stacking diatonic thirds. We give these steps a Roman numeral to represent the numerical degree of the scale.</p>
+<p>RNA provides a method of abstracting a chord progression away from the key it was composed in.
+Each degree of the scale has an associated triad that is built by stacking diatonic thirds opon the root.
+We then give this triad a Roman numeral to represent its numerical degree of the scale.</p>
 <p>For example in the key of C Major:</p>
 <table><thead><tr><th>Root</th><th>Roman</th><th>Spelling</th></tr></thead><tbody>
 <tr><td>C</td><td><code>I</code></td><td>C E G</td></tr>
 <tr><td>D</td><td><code>ii</code></td><td>D F A</td></tr>
 <tr><td>E</td><td><code>iii</code></td><td>E G B</td></tr>
 </tbody></table>
-<p>.. and so on. For each key, we could spell the natural chords above each step of the scale in the same way and all of them would result in the same RNA . We denote a <strong>major triad</strong> with upper case numerals, and a <strong>minor triad</strong> with lower case numerals.</p>
-<p>The natural triads exhibit three permutations of triad:</p>
+<p>.. and so on. For each of the 12 keys, we could spell the natural chords above each step of the scale in the same way and each of them would result in the identical same RNA. A <strong>major triad</strong> is denoted with upper case numerals, and a <strong>minor triad</strong> with lower case numerals.</p>
+<p>The natural triads exhibit three permutations (qualities) of triad:</p>
 <ul>
 <li>Major <code>(I, IV, V)</code></li>
 <li>Minor <code>(ii, iii, iv)</code></li>
-<li>Diminished <code>(vii)</code></li>
+<li>Diminished <code>(vii^b5)</code></li>
 </ul>
-<p>There are 1320 permutations of three notes in the western temperament, but these are by far the most important of the permutations. This will be referred to as the &quot;quality&quot; of the triad or chord.</p>
-<p>The same can be done for any degree of the scale. Go to any degree and start counting from <code>I/i</code>, matching the quality of the major scale at that degree. For example this is the aeolean mode or natural minor:</p>
+<p>The major and minor qualities are especially important because they are integral to tonality and are used as building blocks for more complex chords.
+All other chords are described in reference to basic major and minor chords.</p>
+<blockquote>
+<p>Assumption: we can reduce any musical composition to a series of triads to which further alterations can be made.</p>
+</blockquote>
+<p>Any three or more pitches can be expressed in Coltrane.
+The language provides easy additions and alterations in a syntax based upon actual charts and pedagogical materials.
+While its purpose is to aid in the analysis of tonal music, it is not opinionated.
+What Coltrane provides is a <strong>data structure and api</strong>, not an interpreter, per se.</p>
+<h1><a class="header" href="#modality" id="modality">Modality</a></h1>
+<p>Looking at the key signature, for many charts, doesn't tell the entire story.
+Each key has 7 degrees, each of which is a key in its own right.
+We call these keys modes.</p>
+<table><thead><tr><th>Degree</th><th>Mode</th></tr></thead><tbody>
+<tr><td>I</td><td>Ionian</td></tr>
+<tr><td>ii</td><td>Dorian</td></tr>
+<tr><td>iii</td><td>Phyrigian</td></tr>
+<tr><td>IV</td><td>Lydian</td></tr>
+<tr><td>V</td><td>Mixolydian</td></tr>
+<tr><td>vi</td><td>Aeolian</td></tr>
+<tr><td>vii</td><td>Locrian</td></tr>
+</tbody></table>
+<p>While there may be other more colorful modes, these are ones we are concerned with in Coltrane; the are based on the major scale.
+Whether or not to use a mode is left to the discretion of the Coltrane composer, but it makes the most sense to determine the mode (if it is a mode) and write the code accordingly.</p>
+<p>The same numbering process described in <a href="introduction/natural_triads.html">Natural Triads</a> be done starting at any degree of the scale. Start a new count from <code>I/i</code>, matching the quality of the major scale at that degree. For example, the aeolean mode or natural minor:</p>
 <table><thead><tr><th>Major</th><th>Minor</th></tr></thead><tbody>
 <tr><td><code>I</code></td><td><code>III</code></td></tr>
 <tr><td><code>ii</code></td><td><code>iv</code></td></tr>
@@ -198,25 +236,11 @@
 <tr><td><code>vi</code></td><td><code>i</code></td></tr>
 <tr><td><code>vii</code></td><td><code>ii</code></td></tr>
 </tbody></table>
-<p>The diminished triad that occurs naturally at the seventh degree of the major scale does not have any distinguishing feature in Coltrane; it is written in lower case numerals just like a minor triad.</p>
-<blockquote>
-<p>Assumption: The RNA token <code>vii</code> is always a <strong>diminished</strong> triad. In Coltrane, <code>vii</code> must be altered to be a natural minor: <code>vii^#5</code></p>
-</blockquote>
-<p>Since this may be a point of contention -- perhaps less with music theorists than with Coltrane composers -- the decision bears explanation. The system Coltrane uses is predicated upon a relationship to the major scale. The language specifically defines a relationship to, or distance from, that scale. The RNA tokens used are based upon degrees of that scale, the seventh of which is naturally diminished.</p>
-<p>The spelling of a triad can be expressed in terms of distance in semitones from the root.</p>
-<table><thead><tr><th>Major</th><th>Minor</th><th>Diminished</th><th>Augmented</th></tr></thead><tbody>
-<tr><td><code>[0, +4, +7]</code></td><td><code>[0, +3, +7]</code></td><td><code>[0, +3, +6]</code></td><td><code>[0, +3, +8]</code></td></tr>
-</tbody></table>
-<p>These three categories form the basis of the Coltrane RNA system. </p>
-<blockquote>
-<p>Assumption: we can reduce any musical composition to a series of triads from which further alterations are made.</p>
-</blockquote>
-<p>We are building triads on the same roots, but the tonic differs.
-We essentialy transform the roman numerals using a ROT-6 cipher.</p>
-<h1><a class="header" href="#modality" id="modality">Modality</a></h1>
 <h1><a class="header" href="#unnatural-triads" id="unnatural-triads">Unnatural Triads</a></h1>
 <p>In practice, chord progressions are not limited to the natural triads. 
-Composers are at liberty to choose whatever quality of triad, in whatever inversion, with whatever additions or alterations, at whatever point in the chromatic scale, at any time in a progression with complete disregard for conventional tonality. The roman numeral system does not directly address this fact. To reiterate, we are expressing a relationship to the <strong>current key</strong>.</p>
+Composers are at liberty to choose whatever quality of triad, in whatever inversion, with whatever additions or alterations, at whatever point in the chromatic scale, at any time in a progression with complete disregard for conventional tonality.
+The roman numeral system and Coltrane do not directly address this fact. To reiterate, we are expressing a relationship to the <strong>current key</strong>.
+Furthermore, each numeral </p>
 <p>Still, we must be able to represent chords that do not belong to a key. The cornerstone of tonal music, the <code>V-I</code> authentic cadence, creates a feeling of resolution. It is common for a composer to &quot;target&quot; a certain degree as if resolving to that key using what is known as a borrowed chord. We borrow the <code>V</code> from the following degree as if it were a major key. Consider: <code>A Dm G C</code> and <code>VI ii V I</code>. This is how the Coltrane language represents a &quot;five of two&quot; and other borrowed chords.</p>
 <p>That does not inherently limit a song to a single key, of course. We simply must be content with referencing chords in terms of <strong>semitones from tonic</strong>. To be more specific, unless the composer specifies an explicit key change, we require that chords be expressed in the context of the specified key.</p>
 <h1><a class="header" href="#inversion" id="inversion">Inversion</a></h1>

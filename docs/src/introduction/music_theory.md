@@ -11,3 +11,5 @@ Key
 Scale
 
 Triad
+
+Wholetone and Semitone

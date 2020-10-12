@@ -1,6 +1,8 @@
 # Natural Triads
 
-RNA provides a method of abstracting a chord progression away from the key it was composed in. In this system, each step or degree of the scale has an associated triad that is built upon by stacking diatonic thirds. We give these steps a Roman numeral to represent the numerical degree of the scale.
+RNA provides a method of abstracting a chord progression away from the key it was composed in.
+Each degree of the scale has an associated triad that is built by stacking diatonic thirds opon the root.
+We then give this triad a Roman numeral to represent its numerical degree of the scale.
 
 For example in the key of C Major:
 
@@ -10,43 +12,20 @@ For example in the key of C Major:
 | D | `ii`  | D F A |
 | E | `iii` | E G B |
 
-.. and so on. For each key, we could spell the natural chords above each step of the scale in the same way and all of them would result in the same RNA . We denote a **major triad** with upper case numerals, and a **minor triad** with lower case numerals.
+.. and so on. For each of the 12 keys, we could spell the natural chords above each step of the scale in the same way and each of them would result in the identical same RNA. A **major triad** is denoted with upper case numerals, and a **minor triad** with lower case numerals.
 
-The natural triads exhibit three permutations of triad:
+The natural triads exhibit three permutations (qualities) of triad:
 
 * Major `(I, IV, V)`
 * Minor `(ii, iii, iv)`
-* Diminished `(vii)`
+* Diminished `(vii^b5)`
 
-There are 1320 permutations of three notes in the western temperament, but these are by far the most important of the permutations. This will be referred to as the "quality" of the triad or chord.
+The major and minor qualities are especially important because they are integral to tonality and are used as building blocks for more complex chords.
+All other chords are described in reference to basic major and minor chords.
 
-The same can be done for any degree of the scale. Go to any degree and start counting from `I/i`, matching the quality of the major scale at that degree. For example this is the aeolean mode or natural minor:
+>Assumption: we can reduce any musical composition to a series of triads to which further alterations can be made.
 
-| Major | Minor |
-|-------|-------|
-| `I`   | `III` |
-| `ii`  | `iv`  |
-| `iii` | `v`   |
-| `IV`  | `VI`  |
-| `V`   | `VII` |
-| `vi`  | `i`   |
-| `vii` | `ii`  |
-
-The diminished triad that occurs naturally at the seventh degree of the major scale does not have any distinguishing feature in Coltrane; it is written in lower case numerals just like a minor triad.
-
-> Assumption: The RNA token `vii` is always a **diminished** triad. In Coltrane, `vii` must be altered to be a natural minor: `vii^#5`
-
-Since this may be a point of contention -- perhaps less with music theorists than with Coltrane composers -- the decision bears explanation. The system Coltrane uses is predicated upon a relationship to the major scale. The language specifically defines a relationship to, or distance from, that scale. The RNA tokens used are based upon degrees of that scale, the seventh of which is naturally diminished.
-
-The spelling of a triad can be expressed in terms of distance in semitones from the root.
-
-|Major|Minor|Diminished|Augmented|
-|-----|-----|----------|---------|
-|`[0, +4, +7]`|`[0, +3, +7]`|`[0, +3, +6]`|`[0, +3, +8]`|
-
-These three categories form the basis of the Coltrane RNA system. 
-
->Assumption: we can reduce any musical composition to a series of triads from which further alterations are made.
-
-We are building triads on the same roots, but the tonic differs.
-We essentialy transform the roman numerals using a ROT-6 cipher.
+Any three or more pitches can be expressed in Coltrane.
+The language provides easy additions and alterations in a syntax based upon actual charts and pedagogical materials.
+While its purpose is to aid in the analysis of tonal music, it is not opinionated.
+What Coltrane provides is a **data structure and api**, not an interpreter, per se.

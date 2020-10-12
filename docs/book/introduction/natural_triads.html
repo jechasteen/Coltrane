@@ -160,46 +160,31 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#natural-triads" id="natural-triads">Natural Triads</a></h1>
-<p>RNA provides a method of abstracting a chord progression away from the key it was composed in. In this system, each step or degree of the scale has an associated triad that is built upon by stacking diatonic thirds. We give these steps a Roman numeral to represent the numerical degree of the scale.</p>
+<p>RNA provides a method of abstracting a chord progression away from the key it was composed in.
+Each degree of the scale has an associated triad that is built by stacking diatonic thirds opon the root.
+We then give this triad a Roman numeral to represent its numerical degree of the scale.</p>
 <p>For example in the key of C Major:</p>
 <table><thead><tr><th>Root</th><th>Roman</th><th>Spelling</th></tr></thead><tbody>
 <tr><td>C</td><td><code>I</code></td><td>C E G</td></tr>
 <tr><td>D</td><td><code>ii</code></td><td>D F A</td></tr>
 <tr><td>E</td><td><code>iii</code></td><td>E G B</td></tr>
 </tbody></table>
-<p>.. and so on. For each key, we could spell the natural chords above each step of the scale in the same way and all of them would result in the same RNA . We denote a <strong>major triad</strong> with upper case numerals, and a <strong>minor triad</strong> with lower case numerals.</p>
-<p>The natural triads exhibit three permutations of triad:</p>
+<p>.. and so on. For each of the 12 keys, we could spell the natural chords above each step of the scale in the same way and each of them would result in the identical same RNA. A <strong>major triad</strong> is denoted with upper case numerals, and a <strong>minor triad</strong> with lower case numerals.</p>
+<p>The natural triads exhibit three permutations (qualities) of triad:</p>
 <ul>
 <li>Major <code>(I, IV, V)</code></li>
 <li>Minor <code>(ii, iii, iv)</code></li>
-<li>Diminished <code>(vii)</code></li>
+<li>Diminished <code>(vii^b5)</code></li>
 </ul>
-<p>There are 1320 permutations of three notes in the western temperament, but these are by far the most important of the permutations. This will be referred to as the &quot;quality&quot; of the triad or chord.</p>
-<p>The same can be done for any degree of the scale. Go to any degree and start counting from <code>I/i</code>, matching the quality of the major scale at that degree. For example this is the aeolean mode or natural minor:</p>
-<table><thead><tr><th>Major</th><th>Minor</th></tr></thead><tbody>
-<tr><td><code>I</code></td><td><code>III</code></td></tr>
-<tr><td><code>ii</code></td><td><code>iv</code></td></tr>
-<tr><td><code>iii</code></td><td><code>v</code></td></tr>
-<tr><td><code>IV</code></td><td><code>VI</code></td></tr>
-<tr><td><code>V</code></td><td><code>VII</code></td></tr>
-<tr><td><code>vi</code></td><td><code>i</code></td></tr>
-<tr><td><code>vii</code></td><td><code>ii</code></td></tr>
-</tbody></table>
-<p>The diminished triad that occurs naturally at the seventh degree of the major scale does not have any distinguishing feature in Coltrane; it is written in lower case numerals just like a minor triad.</p>
+<p>The major and minor qualities are especially important because they are integral to tonality and are used as building blocks for more complex chords.
+All other chords are described in reference to basic major and minor chords.</p>
 <blockquote>
-<p>Assumption: The RNA token <code>vii</code> is always a <strong>diminished</strong> triad. In Coltrane, <code>vii</code> must be altered to be a natural minor: <code>vii^#5</code></p>
+<p>Assumption: we can reduce any musical composition to a series of triads to which further alterations can be made.</p>
 </blockquote>
-<p>Since this may be a point of contention -- perhaps less with music theorists than with Coltrane composers -- the decision bears explanation. The system Coltrane uses is predicated upon a relationship to the major scale. The language specifically defines a relationship to, or distance from, that scale. The RNA tokens used are based upon degrees of that scale, the seventh of which is naturally diminished.</p>
-<p>The spelling of a triad can be expressed in terms of distance in semitones from the root.</p>
-<table><thead><tr><th>Major</th><th>Minor</th><th>Diminished</th><th>Augmented</th></tr></thead><tbody>
-<tr><td><code>[0, +4, +7]</code></td><td><code>[0, +3, +7]</code></td><td><code>[0, +3, +6]</code></td><td><code>[0, +3, +8]</code></td></tr>
-</tbody></table>
-<p>These three categories form the basis of the Coltrane RNA system. </p>
-<blockquote>
-<p>Assumption: we can reduce any musical composition to a series of triads from which further alterations are made.</p>
-</blockquote>
-<p>We are building triads on the same roots, but the tonic differs.
-We essentialy transform the roman numerals using a ROT-6 cipher.</p>
+<p>Any three or more pitches can be expressed in Coltrane.
+The language provides easy additions and alterations in a syntax based upon actual charts and pedagogical materials.
+While its purpose is to aid in the analysis of tonal music, it is not opinionated.
+What Coltrane provides is a <strong>data structure and api</strong>, not an interpreter, per se.</p>
 
                     </main>
 

@@ -1,3 +1,3 @@
-# Coltrane Chord Progression Language
+# Chord Progression Language
 
-[White Paper](/book/index.html)
+Read the [WIP] [White Paper](/book/index.html)
