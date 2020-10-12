@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="introduction/modality.html"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="introduction/inversion.html"><strong aria-hidden="true">5.</strong> Inversion</a></li><li class="chapter-item expanded "><a href="introduction/rna_in_the_tonal_context.html"><strong aria-hidden="true">6.</strong> RNA in the Tonal Context</a></li><li class="chapter-item expanded "><a href="introduction/additions_and_alterations.html"><strong aria-hidden="true">7.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="introduction/control_flow_mechanisms.html"><strong aria-hidden="true">8.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="specification/file_format.html"><strong aria-hidden="true">9.</strong> File Format</a></li><li class="chapter-item expanded "><a href="specification/metadata.html"><strong aria-hidden="true">10.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="specification/the_changes.html"><strong aria-hidden="true">11.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="specification/measure_statements.html"><strong aria-hidden="true">12.</strong> Measure Statements</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -161,7 +161,122 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#chapter-1" id="chapter-1">Chapter 1</a></h1>
+                        <h1><a class="header" href="#abstract" id="abstract">Abstract</a></h1>
+<p>This paper describes a language for expressing the abstracted chord progression and linear control flow of musical compositions. Coltrane is written in a simple, human-readable plain text format using <a href="https://en.wikipedia.org/wiki/Roman_numeral_analysis">roman numeral analysis (RNA)</a> tokens and control flow structures. Melodic content is beyond the scope of the language. </p>
+<p>The ideas behind Coltrane -- RNA and chord alteration/augmentation -- are well established music theory. However, there is <a href="https://xkcd.com/927/">some disagreement</a> among theorists as to what can and should be expressed in the analysis and how. A computer requires exacting rules to do its job; a computer makes no mistakes, as the saying goes. This unfortunately means that we must make decisions because the computer can't. It would be burdensome and error-prone to support the parsing of multiple RNA styles, therefore there can only be one set of rules. This, of course, does not preclude future rule additions. We could, for instance, add support for two syntactically different ways to write the same chord expression. Coltrane is open to requests for comment (RFCs) if you disagree with the rules proposed here, or for any other comment or criticism. RFCs should be submitted as a new issue at the repository on GitHub using the RFC template.</p>
+<p>Although there is a wealth of jazz education literature in the form of method books, etudes, and play-a-longs, there is yet an opportunity to further advance pedagogy with computing power. Developers could theoretically use the language interpreter to create an infinite number of exercises based on a chord progression! Coltrane, for the uninitiated, was a saxophonist who they say practiced 12 hours a day and was 20 feet tall. The motivation behind the development of this language is to help us to find new relationships between chords and musical lines <strong>by playing our  instruments</strong>.</p>
+<h1><a class="header" href="#music-theory-primer" id="music-theory-primer">Music Theory Primer</a></h1>
+<p>Chord progression</p>
+<p>Degree of the scale</p>
+<p>Diatonic</p>
+<p>Key</p>
+<p>Scale</p>
+<p>Triad</p>
+<h1><a class="header" href="#natural-triads" id="natural-triads">Natural Triads</a></h1>
+<p>RNA provides a method of abstracting a chord progression away from the key it was composed in. In this system, each step or degree of the scale has an associated triad that is built upon by stacking diatonic thirds. We give these steps a Roman numeral to represent the numerical degree of the scale.</p>
+<p>For example in the key of C Major:</p>
+<table><thead><tr><th>Root</th><th>Roman</th><th>Spelling</th></tr></thead><tbody>
+<tr><td>C</td><td><code>I</code></td><td>C E G</td></tr>
+<tr><td>D</td><td><code>ii</code></td><td>D F A</td></tr>
+<tr><td>E</td><td><code>iii</code></td><td>E G B</td></tr>
+</tbody></table>
+<p>.. and so on. For each key, we could spell the natural chords above each step of the scale in the same way and all of them would result in the same RNA . We denote a <strong>major triad</strong> with upper case numerals, and a <strong>minor triad</strong> with lower case numerals.</p>
+<p>The natural triads exhibit three permutations of triad:</p>
+<ul>
+<li>Major <code>(I, IV, V)</code></li>
+<li>Minor <code>(ii, iii, iv)</code></li>
+<li>Diminished <code>(vii)</code></li>
+</ul>
+<p>There are 1320 permutations of three notes in the western temperament, but these are by far the most important of the permutations. This will be referred to as the &quot;quality&quot; of the triad or chord.</p>
+<p>The same can be done for any degree of the scale. Go to any degree and start counting from <code>I/i</code>, matching the quality of the major scale at that degree. For example this is the aeolean mode or natural minor:</p>
+<table><thead><tr><th>Major</th><th>Minor</th></tr></thead><tbody>
+<tr><td><code>I</code></td><td><code>III</code></td></tr>
+<tr><td><code>ii</code></td><td><code>iv</code></td></tr>
+<tr><td><code>iii</code></td><td><code>v</code></td></tr>
+<tr><td><code>IV</code></td><td><code>VI</code></td></tr>
+<tr><td><code>V</code></td><td><code>VII</code></td></tr>
+<tr><td><code>vi</code></td><td><code>i</code></td></tr>
+<tr><td><code>vii</code></td><td><code>ii</code></td></tr>
+</tbody></table>
+<p>The diminished triad that occurs naturally at the seventh degree of the major scale does not have any distinguishing feature in Coltrane; it is written in lower case numerals just like a minor triad.</p>
+<blockquote>
+<p>Assumption: The RNA token <code>vii</code> is always a <strong>diminished</strong> triad. In Coltrane, <code>vii</code> must be altered to be a natural minor: <code>vii^#5</code></p>
+</blockquote>
+<p>Since this may be a point of contention -- perhaps less with music theorists than with Coltrane composers -- the decision bears explanation. The system Coltrane uses is predicated upon a relationship to the major scale. The language specifically defines a relationship to, or distance from, that scale. The RNA tokens used are based upon degrees of that scale, the seventh of which is naturally diminished.</p>
+<p>The spelling of a triad can be expressed in terms of distance in semitones from the root.</p>
+<table><thead><tr><th>Major</th><th>Minor</th><th>Diminished</th><th>Augmented</th></tr></thead><tbody>
+<tr><td><code>[0, +4, +7]</code></td><td><code>[0, +3, +7]</code></td><td><code>[0, +3, +6]</code></td><td><code>[0, +3, +8]</code></td></tr>
+</tbody></table>
+<p>These three categories form the basis of the Coltrane RNA system. </p>
+<blockquote>
+<p>Assumption: we can reduce any musical composition to a series of triads from which further alterations are made.</p>
+</blockquote>
+<p>We are building triads on the same roots, but the tonic differs.
+We essentialy transform the roman numerals using a ROT-6 cipher.</p>
+<h1><a class="header" href="#modality" id="modality">Modality</a></h1>
+<h1><a class="header" href="#unnatural-triads" id="unnatural-triads">Unnatural Triads</a></h1>
+<p>In practice, chord progressions are not limited to the natural triads. 
+Composers are at liberty to choose whatever quality of triad, in whatever inversion, with whatever additions or alterations, at whatever point in the chromatic scale, at any time in a progression with complete disregard for conventional tonality. The roman numeral system does not directly address this fact. To reiterate, we are expressing a relationship to the <strong>current key</strong>.</p>
+<p>Still, we must be able to represent chords that do not belong to a key. The cornerstone of tonal music, the <code>V-I</code> authentic cadence, creates a feeling of resolution. It is common for a composer to &quot;target&quot; a certain degree as if resolving to that key using what is known as a borrowed chord. We borrow the <code>V</code> from the following degree as if it were a major key. Consider: <code>A Dm G C</code> and <code>VI ii V I</code>. This is how the Coltrane language represents a &quot;five of two&quot; and other borrowed chords.</p>
+<p>That does not inherently limit a song to a single key, of course. We simply must be content with referencing chords in terms of <strong>semitones from tonic</strong>. To be more specific, unless the composer specifies an explicit key change, we require that chords be expressed in the context of the specified key.</p>
+<h1><a class="header" href="#inversion" id="inversion">Inversion</a></h1>
+<h3><a class="header" href="#rna-in-the-tonal-context" id="rna-in-the-tonal-context">RNA in the Tonal Context</a></h3>
+<p>We derive the tonal center for a composition by the key provided by the composer. From that point, we draw a diatonic scale in the specified key. We then compare each chord's root to the scale. If the note lies on the scale, great, spell the natural triad upon that root and assess its triad category.</p>
+<p>If the note falls a semitone below a note of the scale, we have a decision to make. We can label the chord as either flat or sharp. It would be typical to call it a flat in a flat key, or sharp in a sharp key, but for the sake of spelling the chord, it does not matter.</p>
+<p>Remember, composers can pick any triad at any time. This approach should be seen as an asset for the need of expressing a composition's chord progression. It is imperative that we do not impart any bias to the chord progression. Unless we are the composer, we will impart or own biases when preparing an analysis.</p>
+<h1><a class="header" href="#additions-and-alterations" id="additions-and-alterations">Additions and Alterations</a></h1>
+<h2><a class="header" href="#additions" id="additions">Additions</a></h2>
+<p>Chords are not limited to three notes; we can add notes above the chord in thirds (3 or 4 semitones). The most common of these alterations is the 7th, which comes in two variants: the Major 7, and the Dominant 7. We can continue upward to the 9, 11, and 13 before coming full circle. Note that these notes are the same as the 2, 4, and 6.</p>
+<p>Again, we must make an assumption. We assume that any chord with alterations <code>(7, b9, #13, etc.)</code> contain the diatonic tones in between. That is, a <code>#13</code> chord also contains <code>[7, 9, 11]</code>. The intended side-effect of this approach is that the language is equipped to analyze jazz compositions rather than generalized for a broader approach. The language can be used with or without chord alterations for any tonal or atonal composition, it simply makes assumptions about chord spellings that are based upon the jazz idiom.</p>
+<p>The reasoning behind this decision is simple and pragmatic: we intend to draw scales from these expressions, so the language forces you to be specific. The &quot;color&quot; of the chord and scale is based upon these extension notes, so it is very important that the language is concrete in the referencing of extension notes. Any chord can be spelled through alteration expressions, but for brevity and ergonomics we can omit any diatonic extentions between the 7th and the last alteration.</p>
+<h1><a class="header" href="#musics-control-flow-mechanisms" id="musics-control-flow-mechanisms">Music's Control Flow Mechanisms</a></h1>
+<p>Musical language, much like programming languags, has flow from one point to another. It can be expressed as a flow chart, we can visualize the branching and decision making tree. In the case of music, we express this as a rigid decision tree for which every branch of the tree is reached. </p>
+<p>The language, however is not rigid. It has no specific requirement that all branches must be reached and does not expect the tree to be constant during runtime. We could reach into the running code and directly alter the values contained in the data structures of our &quot;running&quot; composition.</p>
+<p>We have an entry point: the first measure. From there we proceed measure by measure until we reach a control flow statement.</p>
+<h2><a class="header" href="#repeats" id="repeats">Repeats</a></h2>
+<p>There are two kinds of repeats that the language can express: barline repeat and branching repeat. In musical symbols the barline repeat looks something like <code>||:  :||</code>. A branching repeat uses barline notation and has different endings, marked above the staff with a numbered bracket. A composition can have any number of repeats, with any number of branches. Thankfully, most music can be expressed with simple control flow, but the language supports arbitrary levels of nested repeats. The interpreter will error if the repeats provided in the source do not resolve.</p>
+<h2><a class="header" href="#jumps" id="jumps">Jumps</a></h2>
+<p>The language provides a jump statement that causes the control flow to jump to the specified measure, optionally an arbitrary number of times. In musical notation this construct is known as &quot;del signo al coda&quot;, &quot;del capo al fine&quot;, etc. If our jump takes us to a point prior to any <em>repeat</em> expression, the repeats will be reset to their original state unless specified.</p>
+<h2><a class="header" href="#ending" id="ending">Ending</a></h2>
+<p>In musical notation, especially sheet music, it is simple to determine where the end is. In musical performance, the story is completely different. During rehearsal performers will decide how many choruses to play, how many times to repeat the head, unwritten interludes, etc. The language permits &quot;unwritten changes&quot; and arrangement by virtue of the code being intuitive to write. We can parse the code again and then update the data structure while running.</p>
+<p>A composition ends either when we run out of measures or we encounter an activated <code>fine</code> keyword. The language doesn't directly support the idea of an infinite loop, but one could simply max out the repeat count value. The language is not concerned with the ending of the composition. The code is parsed and then we simply run the resulting data structure through an interpreter. The interpreter with come to a stopping point, whether that be the specified ending or some sort of error.</p>
+<h1><a class="header" href="#file-format" id="file-format">File Format</a></h1>
+<p>The file ending for the language is <code>.chg</code>, which is short for changes. The file must be in utf-8 encoding with Unix line endings. At a glance, the document would appear to be a toml file, with its ini-style sections, but there are only two permitted headings: <code>[meta]</code> and <code>[changes]</code>.</p>
+<h1><a class="header" href="#metadata" id="metadata">Metadata</a></h1>
+<p>A source file begins with a header that details the composition's metadata. There are required and optional fields.</p>
+<pre><code>[meta]
+title=A Night In Tunisia
+by=Dizzy Gillespie
+meter=4/4
+</code></pre>
+<p>The above are required fields.</p>
+<p>TODO: Other required and/or optional fields</p>
+<h1><a class="header" href="#the-changes" id="the-changes">The Changes</a></h1>
+<p>This section is where language itself is used.
+Each line represents a measure in the song, meaning that the song is linebreak delimited.
+It is required that there be no more than one <em>Measure</em> statement per line.
+There can be any number of <em>Chord</em> expressions within that line. Each line within the changes section is a discrete statement.
+These statements can either be control flow or measures.</p>
+<h1><a class="header" href="#measure-statements" id="measure-statements">Measure Statements</a></h1>
+<p>A measure consists of a series of chord expressions. These chord expressions can be explicit, denoting the beginning and ending point, the triad, and any additions, but there are also methods for abbreviating them. The basic formula for a chord statment is:</p>
+<pre><code>[BeginLocation]:[Triad]^[Additions]:[EndLocation]
+</code></pre>
+<p>If the chord extends to the following change, <code>[EndLocation]</code> may be omitted. If there are no additions <code>^[Additions]</code> may be omittied.</p>
+<p><code>1:vii^7b5 3:III^7b5</code> constitutes a complete measure statement. Supposing Each chord is a quarter note, with a quarter rest in between we would write <code>1:vii^7b5:2 3:III^7b5:4</code>. Please note that the <code>[EndLocation]</code> component is not inclusive, the chord ends <em>on</em> that beat or subdivision.</p>
+<h2><a class="header" href="#location-component" id="location-component">Location Component</a></h2>
+<p>The location component can be expressed as an integer (if the note begins/ends on the beat) or a float (if the note begins/ends on an off beat). Typical values are increments of 0.25, 0.33, 0.125, etc. These are divisions of the note expressed as a float. For example, a dotted quarter note: <code>1:V^7b5:2.5</code>.</p>
+<h2><a class="header" href="#triad-component" id="triad-component">Triad Component</a></h2>
+<p>This is the RNA portion of the measure statement. The options here are relatively limited. It consists of a roman numeral between 1 and 7, with an optional flat or sharp alteration prefix. For example <code>bVII</code> or <code>iv</code>. Capital letters denotes a major triad, lower case a minor triad.</p>
+<blockquote>
+<p>There is an exception in the case of the literal <code>vii</code>, which is a diminished chord diatonically. Otherwise, we denote a diminished chord with a <code>b5</code> alteration as in <code>V7b5</code></p>
+</blockquote>
+<p>If there is a <code>b</code> or <code>#</code> prefix, the root is lowered or raised by one semitone, respectively. There is no <code>dd</code> or <code>##</code> (double flat/sharp). In that instance, the next lower step should be used. The intent is to represent the notes from the perspective of the key center. If there is a triad based upon a natural step of the scale, it should be preferred over a flatted or sharped triad.</p>
+<p>There are 12 tones total in the western temperament.</p>
+<pre><code>1     2     3     4     5     6     7     8     9     10    11    12
+C     C#/Db D     D#/Eb E     F     F#/Gb G     G#/Ab A     A#/Bb B
+I           II          III   IV          V           VI          VII
+</code></pre>
+<p>For each tone not in the diatonic scale, the root can be written using either a flat or sharp prefix. Again, it is typical to decide this based on the current key center. For flat keys, prefer the flat prefix and for sharp keys, prefer the sharp prefix. Both chords are otherwise equivalent.</p>
 
                     </main>
 
