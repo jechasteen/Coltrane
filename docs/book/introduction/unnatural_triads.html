@@ -162,10 +162,24 @@
                         <h1><a class="header" href="#unnatural-triads" id="unnatural-triads">Unnatural Triads</a></h1>
 <p>In practice, chord progressions are not limited to the natural triads. 
 Composers are at liberty to choose whatever quality of triad, in whatever inversion, with whatever additions or alterations, at whatever point in the chromatic scale, at any time in a progression with complete disregard for conventional tonality.
-The roman numeral system and Coltrane do not directly address this fact. To reiterate, we are expressing a relationship to the <strong>current key</strong>.
-Furthermore, each numeral </p>
-<p>Still, we must be able to represent chords that do not belong to a key. The cornerstone of tonal music, the <code>V-I</code> authentic cadence, creates a feeling of resolution. It is common for a composer to &quot;target&quot; a certain degree as if resolving to that key using what is known as a borrowed chord. We borrow the <code>V</code> from the following degree as if it were a major key. Consider: <code>A Dm G C</code> and <code>VI ii V I</code>. This is how the Coltrane language represents a &quot;five of two&quot; and other borrowed chords.</p>
-<p>That does not inherently limit a song to a single key, of course. We simply must be content with referencing chords in terms of <strong>semitones from tonic</strong>. To be more specific, unless the composer specifies an explicit key change, we require that chords be expressed in the context of the specified key.</p>
+The roman numeral system and Coltrane do not directly address this fact. To reiterate, we are expressing a relationship to the <strong>current key</strong>.</p>
+<p>Still, we must be able to represent chords that do not belong to a key.
+An example should help to understand how this works in Coltrane.
+The cornerstone of tonal music, the <code>V-I</code> authentic cadence, which creates a feeling of resolution.
+It is common for a composer to &quot;target&quot; a certain degree as if resolving to that key using what is known as a borrowed chord.
+In both dorian and aeolian minor, the fifth degree is naturally minor, but we borrow <code>V</code> as if we are creating a <code>V-I</code>.
+This is what would be considered a deceptive cadence, and is often found somewhere prior to an authentic cadence.
+Consider: <code>A Dm G C</code> and <code>VI ii V I</code>.
+Notice the <code>VI</code> chord; the sixth degree would naturally be <code>vi</code>.
+This is how the Coltrane language represents a &quot;five of two&quot; and other borrowed chords.
+A Coltrane RNA token is based on the <strong>quality</strong> and <strong>degree</strong> and can be made to describe any chord in terms of <strong>semitones from tonic</strong>.
+To be more specific, unless the composer specifies an explicit key change, we require that chords be expressed in the context of the specified key.</p>
+<p>For example, all 12 notes in the C Major context:</p>
+<table><thead><tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th></tr></thead><tbody>
+<tr><td>C</td><td>C#/Db</td><td>D</td><td>D#/Eb</td><td>E</td><td>F</td><td>F#/Gb</td><td>G</td><td>G#/Ab</td><td>A</td><td>A#/Bb</td><td>B</td></tr>
+<tr><td><code>I</code></td><td><code>#I/bII</code></td><td><code>II</code></td><td><code>#II/bIII</code></td><td><code>III</code></td><td><code>#III/bIV</code></td><td><code>IV</code></td><td><code>V</code></td><td><code>#V/bVI</code></td><td><code>VI</code></td><td><code>#VI/bVII</code></td><td><code>VII</code></td></tr>
+</tbody></table>
+<p>Note: The numerals above are all capital, but they could be either major or minor.</p>
 
                     </main>
 

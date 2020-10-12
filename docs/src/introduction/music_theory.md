@@ -8,6 +8,8 @@ Diatonic
 
 Key
 
+Resolve one chord to another
+
 Scale
 
 Triad
