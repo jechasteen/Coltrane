@@ -8,8 +8,6 @@
 - [Natural Triads](./introduction/natural_triads.md)
 - [Modality](./introduction/modality.md)
 - [Unnatural Triads](./introduction/unnatural_triads.md)
-- [Inversion](./introduction/inversion.md)
-- [RNA in the Tonal Context](./introduction/rna_in_the_tonal_context.md)
 - [Additions and Alterations](./introduction/additions_and_alterations.md)
 - [Music's Control Flow Mechanisms](./introduction/control_flow_mechanisms.md)
 
@@ -18,8 +16,18 @@
 - [File Format](./specification/file_format.md)
 - [Metadata](./specification/metadata.md)
 - [The Changes](./specification/the_changes.md)
-- [Measure Statements](./specification/measure_statements.md)
+- [Measure Statements Overview](./specification/measure_statements.md)
+- [Start and End](./specification/start_and_end.md)
+- [RNA Tokens](./specification/rna_tokens.md)
+- [Additions and Alterations](./specification/additions_and_alterations.md)
+- [Inversions](./specification/inversions.md)
+- [Slash Chords](./specification/slash_chords.md)
+- [Superimposed Chords](./specification/superimposed_chords.md)
+- [Repeats](./specification/repeats.md)
+- [Jumps](./specification/jumps.md)
 
 # Implementation
 
 # Use Case
+
+# Conclusion

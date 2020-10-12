@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Modality</title>
+        <title>Inversions</title>
         
         
 
@@ -93,7 +93,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="../introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="../introduction/modality.html" class="active"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="../introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="../introduction/additions_and_alterations.html"><strong aria-hidden="true">5.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="../introduction/control_flow_mechanisms.html"><strong aria-hidden="true">6.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="../specification/file_format.html"><strong aria-hidden="true">7.</strong> File Format</a></li><li class="chapter-item expanded "><a href="../specification/metadata.html"><strong aria-hidden="true">8.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="../specification/the_changes.html"><strong aria-hidden="true">9.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="../specification/measure_statements.html"><strong aria-hidden="true">10.</strong> Measure Statements Overview</a></li><li class="chapter-item expanded "><a href="../specification/start_and_end.html"><strong aria-hidden="true">11.</strong> Start and End</a></li><li class="chapter-item expanded "><a href="../specification/rna_tokens.html"><strong aria-hidden="true">12.</strong> RNA Tokens</a></li><li class="chapter-item expanded "><a href="../specification/additions_and_alterations.html"><strong aria-hidden="true">13.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="../specification/inversions.html"><strong aria-hidden="true">14.</strong> Inversions</a></li><li class="chapter-item expanded "><a href="../specification/slash_chords.html"><strong aria-hidden="true">15.</strong> Slash Chords</a></li><li class="chapter-item expanded "><a href="../specification/superimposed_chords.html"><strong aria-hidden="true">16.</strong> Superimposed Chords</a></li><li class="chapter-item expanded "><a href="../specification/repeats.html"><strong aria-hidden="true">17.</strong> Repeats</a></li><li class="chapter-item expanded "><a href="../specification/jumps.html"><strong aria-hidden="true">18.</strong> Jumps</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="../introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="../introduction/modality.html"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="../introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="../introduction/additions_and_alterations.html"><strong aria-hidden="true">5.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="../introduction/control_flow_mechanisms.html"><strong aria-hidden="true">6.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="../specification/file_format.html"><strong aria-hidden="true">7.</strong> File Format</a></li><li class="chapter-item expanded "><a href="../specification/metadata.html"><strong aria-hidden="true">8.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="../specification/the_changes.html"><strong aria-hidden="true">9.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="../specification/measure_statements.html"><strong aria-hidden="true">10.</strong> Measure Statements Overview</a></li><li class="chapter-item expanded "><a href="../specification/start_and_end.html"><strong aria-hidden="true">11.</strong> Start and End</a></li><li class="chapter-item expanded "><a href="../specification/rna_tokens.html"><strong aria-hidden="true">12.</strong> RNA Tokens</a></li><li class="chapter-item expanded "><a href="../specification/additions_and_alterations.html"><strong aria-hidden="true">13.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="../specification/inversions.html" class="active"><strong aria-hidden="true">14.</strong> Inversions</a></li><li class="chapter-item expanded "><a href="../specification/slash_chords.html"><strong aria-hidden="true">15.</strong> Slash Chords</a></li><li class="chapter-item expanded "><a href="../specification/superimposed_chords.html"><strong aria-hidden="true">16.</strong> Superimposed Chords</a></li><li class="chapter-item expanded "><a href="../specification/repeats.html"><strong aria-hidden="true">17.</strong> Repeats</a></li><li class="chapter-item expanded "><a href="../specification/jumps.html"><strong aria-hidden="true">18.</strong> Jumps</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -159,44 +159,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#modality" id="modality">Modality</a></h1>
-<p>Looking at the key signature, for many charts, doesn't tell the entire story.
-Each key has 7 degrees, each of which is a key in its own right.
-We call these keys modes.</p>
-<table><thead><tr><th>Degree</th><th>Mode</th></tr></thead><tbody>
-<tr><td>I</td><td>Ionian</td></tr>
-<tr><td>ii</td><td>Dorian</td></tr>
-<tr><td>iii</td><td>Phyrigian</td></tr>
-<tr><td>IV</td><td>Lydian</td></tr>
-<tr><td>V</td><td>Mixolydian</td></tr>
-<tr><td>vi</td><td>Aeolian</td></tr>
-<tr><td>vii</td><td>Locrian</td></tr>
-</tbody></table>
-<p>While there may be other more colorful modes, these are ones we are concerned with in Coltrane; the are based on the major scale.
-Whether or not to use a mode is left to the discretion of the Coltrane composer, but it makes the most sense to determine the mode (if it is a mode) and write the code accordingly.</p>
-<p>The same numbering process described in <a href="natural_triads.html">Natural Triads</a> be done starting at any degree of the scale. Start a new count from <code>I/i</code>, matching the quality of the major scale at that degree. For example, the aeolean mode or natural minor:</p>
-<table><thead><tr><th>Major</th><th>Minor</th></tr></thead><tbody>
-<tr><td><code>I</code></td><td><code>III</code></td></tr>
-<tr><td><code>ii</code></td><td><code>iv</code></td></tr>
-<tr><td><code>iii</code></td><td><code>v</code></td></tr>
-<tr><td><code>IV</code></td><td><code>VI</code></td></tr>
-<tr><td><code>V</code></td><td><code>VII</code></td></tr>
-<tr><td><code>vi</code></td><td><code>i</code></td></tr>
-<tr><td><code>vii</code></td><td><code>ii</code></td></tr>
-</tbody></table>
+                        <h1><a class="header" href="#inversions" id="inversions">Inversions</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../introduction/natural_triads.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../specification/additions_and_alterations.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../introduction/unnatural_triads.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../specification/slash_chords.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -208,13 +184,13 @@ Whether or not to use a mode is left to the discretion of the Coltrane composer,
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../introduction/natural_triads.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../specification/additions_and_alterations.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../introduction/unnatural_triads.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../specification/slash_chords.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

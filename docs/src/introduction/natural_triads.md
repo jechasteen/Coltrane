@@ -1,16 +1,16 @@
 # Natural Triads
 
 RNA provides a method of abstracting a chord progression away from the key it was composed in.
-Each degree of the scale has an associated triad that is built by stacking diatonic thirds opon the root.
+Each degree of the scale has an associated triad that is built by stacking diatonic thirds upon the root.
 We then give this triad a Roman numeral to represent its numerical degree of the scale.
 
 For example in the key of C Major:
 
 | Root | Roman | Spelling |
-|------|-------|----------|
-| C | `I`   | C E G |
-| D | `ii`  | D F A |
-| E | `iii` | E G B |
+| ---- | ----- | -------- |
+| C    | `I`   | C E G    |
+| D    | `ii`  | D F A    |
+| E    | `iii` | E G B    |
 
 .. and so on. For each of the 12 keys, we could spell the natural chords above each step of the scale in the same way and each of them would result in the identical same RNA. A **major triad** is denoted with upper case numerals, and a **minor triad** with lower case numerals.
 
@@ -21,7 +21,7 @@ The natural triads exhibit three permutations (qualities) of triad:
 * Diminished `(vii^b5)`
 
 The major and minor qualities are especially important because they are integral to tonality and are used as building blocks for more complex chords.
-All other chords are described in reference to basic major and minor chords.
+All other chords are described as variants of the basic major and minor triad.
 
 >Assumption: we can reduce any musical composition to a series of triads to which further alterations can be made.
 

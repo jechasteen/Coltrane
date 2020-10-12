@@ -1,14 +1,22 @@
 # Music's Control Flow Mechanisms
 
-Musical language, much like programming languags, has flow from one point to another. It can be expressed as a flow chart, we can visualize the branching and decision making tree. In the case of music, we express this as a rigid decision tree for which every branch of the tree is reached. 
+Musical language, much like programming languages, has flow from one point to another.
+In the case of written music, we could express this as a rigid decision tree for which every branch of the tree is reached. 
 
-The language, however is not rigid. It has no specific requirement that all branches must be reached and does not expect the tree to be constant during runtime. We could reach into the running code and directly alter the values contained in the data structures of our "running" composition.
+Coltrane, however, is not rigid.
+It has no specific requirement that all branches must be reached and does not expect the tree to be constant during runtime.
+We could reach into the program and directly alter the values contained in the data structures of our "running" composition.
 
 We have an entry point: the first measure. From there we proceed measure by measure until we reach a control flow statement.
 
 ## Repeats
 
-There are two kinds of repeats that the language can express: barline repeat and branching repeat. In musical symbols the barline repeat looks something like `||:  :||`. A branching repeat uses barline notation and has different endings, marked above the staff with a numbered bracket. A composition can have any number of repeats, with any number of branches. Thankfully, most music can be expressed with simple control flow, but the language supports arbitrary levels of nested repeats. The interpreter will error if the repeats provided in the source do not resolve.
+There are two kinds of repeats that the language can express: bar line repeat and branching repeat.
+A bar line repeat looks something like `||:  :||` and results in a simple loop.
+A branching repeat uses the same bar line notation but has different endings, marked above the staff with numbered brackets.
+A composition can have any number of repeats, with any number of branches. 
+Thankfully, most music can be expressed with simple control flow, but the language supports arbitrary levels of nested repeats.
+The interpreter will error if the repeats provided in the source do not resolve.
 
 ## Jumps
 

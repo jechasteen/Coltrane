@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="introduction/modality.html"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="introduction/inversion.html"><strong aria-hidden="true">5.</strong> Inversion</a></li><li class="chapter-item expanded "><a href="introduction/rna_in_the_tonal_context.html"><strong aria-hidden="true">6.</strong> RNA in the Tonal Context</a></li><li class="chapter-item expanded "><a href="introduction/additions_and_alterations.html"><strong aria-hidden="true">7.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="introduction/control_flow_mechanisms.html"><strong aria-hidden="true">8.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="specification/file_format.html"><strong aria-hidden="true">9.</strong> File Format</a></li><li class="chapter-item expanded "><a href="specification/metadata.html"><strong aria-hidden="true">10.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="specification/the_changes.html"><strong aria-hidden="true">11.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="specification/measure_statements.html"><strong aria-hidden="true">12.</strong> Measure Statements</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="introduction/modality.html"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="introduction/additions_and_alterations.html"><strong aria-hidden="true">5.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="introduction/control_flow_mechanisms.html"><strong aria-hidden="true">6.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="specification/file_format.html"><strong aria-hidden="true">7.</strong> File Format</a></li><li class="chapter-item expanded "><a href="specification/metadata.html"><strong aria-hidden="true">8.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="specification/the_changes.html"><strong aria-hidden="true">9.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="specification/measure_statements.html"><strong aria-hidden="true">10.</strong> Measure Statements Overview</a></li><li class="chapter-item expanded "><a href="specification/start_and_end.html"><strong aria-hidden="true">11.</strong> Start and End</a></li><li class="chapter-item expanded "><a href="specification/rna_tokens.html"><strong aria-hidden="true">12.</strong> RNA Tokens</a></li><li class="chapter-item expanded "><a href="specification/additions_and_alterations.html"><strong aria-hidden="true">13.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="specification/inversions.html"><strong aria-hidden="true">14.</strong> Inversions</a></li><li class="chapter-item expanded "><a href="specification/slash_chords.html"><strong aria-hidden="true">15.</strong> Slash Chords</a></li><li class="chapter-item expanded "><a href="specification/superimposed_chords.html"><strong aria-hidden="true">16.</strong> Superimposed Chords</a></li><li class="chapter-item expanded "><a href="specification/repeats.html"><strong aria-hidden="true">17.</strong> Repeats</a></li><li class="chapter-item expanded "><a href="specification/jumps.html"><strong aria-hidden="true">18.</strong> Jumps</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -178,14 +178,28 @@ The computer can do some of the thinking, which leaves more time for the woodshe
 Developers could theoretically use the language interpreter to create an infinite number of exercises based on a chord progression!
 John Coltrane, for the uninitiated, was a saxophonist who they say practiced 12 hours a day and was 20 feet tall. The motivation behind the development of this language is to help us to find new relationships between chords and musical lines <strong>by playing our  instruments</strong>.</p>
 <h1><a class="header" href="#music-theory-primer" id="music-theory-primer">Music Theory Primer</a></h1>
-<p>Chord progression</p>
-<p>Degree of the scale</p>
-<p>Diatonic</p>
-<p>Key</p>
-<p>Resolve one chord to another</p>
-<p>Scale</p>
-<p>Triad</p>
-<p>Wholetone and Semitone</p>
+<p>Feel free to skip this chapter if you have an intermediate knowledge of music theory.
+This section is a glossary that will be linked to throughout the paper, so you may skip this section and follow the links back when needed.</p>
+<h2><a class="header" href="#chord-progression" id="chord-progression">Chord progression</a></h2>
+<h2><a class="header" href="#chromatic" id="chromatic">Chromatic</a></h2>
+<p>Refers to the scale built upon all 12 tones.
+Can also be used in reference to melodic passages or to the notes outside of a scale.</p>
+<h2><a class="header" href="#degree-of-the-scale" id="degree-of-the-scale">Degree of the scale</a></h2>
+<p>Each note of the scale is numbered 1-7.
+E.G., in the key of C major, A is the sixth degree.</p>
+<h2><a class="header" href="#diatonic" id="diatonic">Diatonic</a></h2>
+<p>The notes in a scale, as opposed to the <em>chromatic</em> notes in between.</p>
+<h2><a class="header" href="#key" id="key">Key</a></h2>
+<h2><a class="header" href="#resolve-one-chord-to-another" id="resolve-one-chord-to-another">Resolve one chord to another</a></h2>
+<h2><a class="header" href="#scale" id="scale">Scale</a></h2>
+<h2><a class="header" href="#slash-chords" id="slash-chords">Slash chords</a></h2>
+<p>Explicitly states the lowest note in a scale.
+Can be used to create an inversion, to use a bass note outside the chord, or to create the impression of a superimposed chord.</p>
+<h2><a class="header" href="#superimposed-chords" id="superimposed-chords">Superimposed Chords</a></h2>
+<p>Literally any two chords at the same time.
+Chords may share notes, but it is not required.</p>
+<h2><a class="header" href="#triad" id="triad">Triad</a></h2>
+<h2><a class="header" href="#wholetone-and-semitone" id="wholetone-and-semitone">Wholetone and Semitone</a></h2>
 <h1><a class="header" href="#natural-triads" id="natural-triads">Natural Triads</a></h1>
 <p>RNA provides a method of abstracting a chord progression away from the key it was composed in.
 Each degree of the scale has an associated triad that is built by stacking diatonic thirds opon the root.
@@ -204,7 +218,7 @@ We then give this triad a Roman numeral to represent its numerical degree of the
 <li>Diminished <code>(vii^b5)</code></li>
 </ul>
 <p>The major and minor qualities are especially important because they are integral to tonality and are used as building blocks for more complex chords.
-All other chords are described in reference to basic major and minor chords.</p>
+All other chords are described as variants of the basic major and minor triad.</p>
 <blockquote>
 <p>Assumption: we can reduce any musical composition to a series of triads to which further alterations can be made.</p>
 </blockquote>
@@ -258,11 +272,6 @@ To be more specific, unless the composer specifies an explicit key change, we re
 <tr><td><code>I</code></td><td><code>#I/bII</code></td><td><code>II</code></td><td><code>#II/bIII</code></td><td><code>III</code></td><td><code>#III/bIV</code></td><td><code>IV</code></td><td><code>V</code></td><td><code>#V/bVI</code></td><td><code>VI</code></td><td><code>#VI/bVII</code></td><td><code>VII</code></td></tr>
 </tbody></table>
 <p>Note: The numerals above are all capital, but they could be either major or minor.</p>
-<h1><a class="header" href="#inversion" id="inversion">Inversion</a></h1>
-<h3><a class="header" href="#rna-in-the-tonal-context" id="rna-in-the-tonal-context">RNA in the Tonal Context</a></h3>
-<p>We derive the tonal center for a composition by the key provided by the composer. From that point, we draw a diatonic scale in the specified key. We then compare each chord's root to the scale. If the note lies on the scale, great, spell the natural triad upon that root and assess its triad category.</p>
-<p>If the note falls a semitone below a note of the scale, we have a decision to make. We can label the chord as either flat or sharp. It would be typical to call it a flat in a flat key, or sharp in a sharp key, but for the sake of spelling the chord, it does not matter.</p>
-<p>Remember, composers can pick any triad at any time. This approach should be seen as an asset for the need of expressing a composition's chord progression. It is imperative that we do not impart any bias to the chord progression. Unless we are the composer, we will impart or own biases when preparing an analysis.</p>
 <h1><a class="header" href="#additions-and-alterations" id="additions-and-alterations">Additions and Alterations</a></h1>
 <h2><a class="header" href="#additions" id="additions">Additions</a></h2>
 <p>Chords are not limited to three notes; we can add notes above the chord in thirds (3 or 4 semitones). The most common of these alterations is the 7th, which comes in two variants: the Major 7, and the Dominant 7. We can continue upward to the 9, 11, and 13 before coming full circle. Note that these notes are the same as the 2, 4, and 6.</p>
@@ -316,6 +325,14 @@ C     C#/Db D     D#/Eb E     F     F#/Gb G     G#/Ab A     A#/Bb B
 I           II          III   IV          V           VI          VII
 </code></pre>
 <p>For each tone not in the diatonic scale, the root can be written using either a flat or sharp prefix. Again, it is typical to decide this based on the current key center. For flat keys, prefer the flat prefix and for sharp keys, prefer the sharp prefix. Both chords are otherwise equivalent.</p>
+<h1><a class="header" href="#start-and-end" id="start-and-end">Start and End</a></h1>
+<h1><a class="header" href="#rna-tokens" id="rna-tokens">RNA Tokens</a></h1>
+<h1><a class="header" href="#additions-and-alterations-1" id="additions-and-alterations-1">Additions and Alterations</a></h1>
+<h1><a class="header" href="#inversions" id="inversions">Inversions</a></h1>
+<h1><a class="header" href="#slash-chords-1" id="slash-chords-1">Slash Chords</a></h1>
+<h1><a class="header" href="#superimposed-chords-1" id="superimposed-chords-1">Superimposed Chords</a></h1>
+<h1><a class="header" href="#repeats-1" id="repeats-1">Repeats</a></h1>
+<h1><a class="header" href="#jumps-1" id="jumps-1">Jumps</a></h1>
 
                     </main>
 
