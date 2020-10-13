@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="introduction/modality.html"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="introduction/additions_and_alterations.html"><strong aria-hidden="true">5.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="introduction/control_flow_mechanisms.html"><strong aria-hidden="true">6.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="specification/file_format.html"><strong aria-hidden="true">7.</strong> File Format</a></li><li class="chapter-item expanded "><a href="specification/metadata.html"><strong aria-hidden="true">8.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="specification/the_changes.html"><strong aria-hidden="true">9.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="specification/measure_statements.html"><strong aria-hidden="true">10.</strong> Measure Statements Overview</a></li><li class="chapter-item expanded "><a href="specification/start_and_end.html"><strong aria-hidden="true">11.</strong> Start and End</a></li><li class="chapter-item expanded "><a href="specification/rna_tokens.html"><strong aria-hidden="true">12.</strong> RNA Tokens</a></li><li class="chapter-item expanded "><a href="specification/additions_and_alterations.html"><strong aria-hidden="true">13.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="specification/inversions.html"><strong aria-hidden="true">14.</strong> Inversions</a></li><li class="chapter-item expanded "><a href="specification/slash_chords.html"><strong aria-hidden="true">15.</strong> Slash Chords</a></li><li class="chapter-item expanded "><a href="specification/superimposed_chords.html"><strong aria-hidden="true">16.</strong> Superimposed Chords</a></li><li class="chapter-item expanded "><a href="specification/repeats.html"><strong aria-hidden="true">17.</strong> Repeats</a></li><li class="chapter-item expanded "><a href="specification/jumps.html"><strong aria-hidden="true">18.</strong> Jumps</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li><li class="chapter-item expanded affix "><li class="part-title">Conclusion</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="introduction/modality.html"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="introduction/additions_and_alterations.html"><strong aria-hidden="true">5.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="introduction/control_flow_mechanisms.html"><strong aria-hidden="true">6.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="specification/file_format.html"><strong aria-hidden="true">7.</strong> File Format</a></li><li class="chapter-item expanded "><a href="specification/metadata.html"><strong aria-hidden="true">8.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="specification/the_changes.html"><strong aria-hidden="true">9.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="specification/measure_statements.html"><strong aria-hidden="true">10.</strong> Measure Statements and Chord Expressions</a></li><li class="chapter-item expanded "><a href="specification/superimposed_chords.html"><strong aria-hidden="true">11.</strong> Superimposed Chords</a></li><li class="chapter-item expanded "><a href="specification/repeats.html"><strong aria-hidden="true">12.</strong> Repeats</a></li><li class="chapter-item expanded "><a href="specification/jumps.html"><strong aria-hidden="true">13.</strong> Jumps</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li><li class="chapter-item expanded affix "><li class="part-title">Conclusion</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -300,22 +300,22 @@ We could reach into the program and directly alter the values contained in the d
 <p>We have an entry point: the first measure. From there we proceed measure by measure until we reach a control flow statement.</p>
 <h2><a class="header" href="#repeats" id="repeats">Repeats</a></h2>
 <p>There are two kinds of repeats that the language can express: bar line repeat and branching repeat.
-A bar line repeat looks something like <code>||:  :||</code> and results in a simple loop.
+A bar line repeat looks something like 𝄆𝄚𝄚𝄚𝄇 <code>||:   :||</code> and results in a simple loop.
 A branching repeat uses the same bar line notation but has different endings, marked above the staff with numbered brackets.
 A composition can have any number of repeats and any number of branches. 
 Thankfully, most music can be expressed with simple control flow, but the language supports arbitrary levels of nested repeats.
-If repeats are nested inside of each other, they resolve in a similar manner to parentheses, e.g. <code>(()(()))</code>
+If repeats are nested inside of each other, they resolve in a similar manner to parentheses, e.g. <code>( () (()) )</code>.
 The interpreter will error if the repeats provided in the source do not resolve.</p>
 <h2><a class="header" href="#jumps" id="jumps">Jumps</a></h2>
 <p>The language provides a jump statement that causes the control flow to jump to the specified measure, optionally an arbitrary number of times.
-In musical notation this construct is known as <em>del signo al coda</em>, <em>del capo al fine</em>, etc.
+In musical notation this construct is known as <em>dal signo al coda</em>, <em>da capo al fine</em>, etc.
 If our jump takes us to a point prior to any <em>repeat</em> expression, the repeats will be reset to their original state unless specified.</p>
-<p>Creating a <em>del signo al coda</em> requires:</p>
+<p>Creating a <em>dal signo al coda</em> requires:</p>
 <table><thead><tr><th></th><th></th></tr></thead><tbody>
-<tr><td>1. Jump that must be skipped once to activate</td><td><em>al coda</em></td></tr>
-<tr><td>2. Jump to a point in the progression prior to the <em>al coda</em></td><td><em>del signo</em></td></tr>
-<tr><td>3. Target of 1</td><td><em>coda</em></td></tr>
-<tr><td>4. Target of 2</td><td><em>signo</em></td></tr>
+<tr><td>1. Jump that may be skipped once to activate</td><td><em>al coda</em></td></tr>
+<tr><td>2. Jump to a point in the progression prior to the <em>al coda</em></td><td>𝄉 <em>del signo</em></td></tr>
+<tr><td>3. Target of 1</td><td>𝄌 <em>coda</em></td></tr>
+<tr><td>4. Target of 2</td><td>𝄋 <em>signo</em></td></tr>
 </tbody></table>
 <p>A jump can be set to jump any number of times, and a target will simply keep receiving it.
 It could also be set to only jump on the nth pass.</p>
@@ -344,25 +344,72 @@ title=A Night In Tunisia
 by=Dizzy Gillespie
 meter=4/4
 </code></pre>
-<p>Optional Fields</p>
-<pre><code>key=
+<p>Optional Fields:</p>
+<pre><code>key=F
 mode=Mixolydian
-
 </code></pre>
+<p>Each line must be in the format [key]=[value], but it also supports spaces before and after the equals: [key] = [value].</p>
 <h1><a class="header" href="#the-changes" id="the-changes">The Changes</a></h1>
-<p>This section is where language itself is used.
-Each line represents a measure in the song, meaning that the song is linebreak delimited.
-It is required that there be no more than one <em>Measure</em> statement per line.
-There can be any number of <em>Chord</em> expressions within that line. Each line within the changes section is a discrete statement.
-These statements can either be control flow or measures.</p>
-<h1><a class="header" href="#measure-statements" id="measure-statements">Measure Statements</a></h1>
-<p>A measure consists of a series of chord expressions. These chord expressions can be explicit, denoting the beginning and ending point, the triad, and any additions, but there are also methods for abbreviating them. The basic formula for a chord statment is:</p>
-<pre><code>[BeginLocation]:[Triad]^[Additions]:[EndLocation]
+<p>This section is where the Coltrane language itself is used.
+The changes is line break delimited, each line constitutes a <strong>statement</strong>.
+These statements can be measures, control flow, or comments</p>
+<p>It is required that there be no more than one <em>measure</em> statement per line, but there can be any number of <em>chord</em> expressions within that line.</p>
+<p>These statements can either be control flow or measures.</p>
+<h2><a class="header" href="#statement-vs-expression" id="statement-vs-expression">Statement vs Expression</a></h2>
+<p>Just as in programming languages, Coltrane makes a distinction between a statement and an expression.
+Simply put, an statement is composed of an expression or multiple expressions.</p>
+<p>A control flow expression is statement composed of exactly 1 expression.
+Many chord expressions can be combined in a single line to form 1 measure statement.</p>
+<p>The distinction is not important for Coltrane composers, but it bears mentioning because of the importance of the line break.
+For the composer, it suffices to understand the importance of statements each being on their own line.</p>
+<h2><a class="header" href="#comments" id="comments">Comments</a></h2>
+<p>Coltrane supports single line comments marked by a <code>$</code> at the beginning of the line.
+Anything after the <code>$</code> is disregarded by the parser.
+A comment can be used in any part of the source file, not just in <code>[changes]</code>.</p>
+<pre><code>[changes]
+$ introduction: bass line
+1:bVII7
+1:vi
 </code></pre>
-<p>If the chord extends to the following change, <code>[EndLocation]</code> may be omitted. If there are no additions <code>^[Additions]</code> may be omittied.</p>
-<p><code>1:vii^7b5 3:III^7b5</code> constitutes a complete measure statement. Supposing Each chord is a quarter note, with a quarter rest in between we would write <code>1:vii^7b5:2 3:III^7b5:4</code>. Please note that the <code>[EndLocation]</code> component is not inclusive, the chord ends <em>on</em> that beat or subdivision.</p>
-<h2><a class="header" href="#location-component" id="location-component">Location Component</a></h2>
-<p>The location component can be expressed as an integer (if the note begins/ends on the beat) or a float (if the note begins/ends on an off beat). Typical values are increments of 0.25, 0.33, 0.125, etc. These are divisions of the note expressed as a float. For example, a dotted quarter note: <code>1:V^7b5:2.5</code>.</p>
+<h1><a class="header" href="#measure-statements-and-chord-expressions" id="measure-statements-and-chord-expressions">Measure Statements and Chord Expressions</a></h1>
+<p>A measure statement consists of a series of chord expressions.
+These chord expressions can be explicit, denoting the beginning and ending point, the triad, and any additions, but there are also methods for abbreviating them.</p>
+<p>The basic formula for a chord statement is:</p>
+<pre><code>[BeginLocation:][Triad][^Additions][:EndLocation]
+</code></pre>
+<p>If the chord extends to the following change, <code>[:EndLocation]</code> may be omitted. If there are no additions <code>[^Additions]</code> may be omitted.</p>
+<p>For example, <code>1:vii^7b5 3:III^7b5</code> constitutes a complete measure statement.
+Supposing each chord is a quarter note, with a quarter rest in between we would write <code>1:vii^7b5:2 3:III^7b5:4</code>.
+Please note that the <code>[EndLocation]</code> component is not inclusive, the chord ends <em>on</em> that beat or subdivision.
+To make a rest or no chord (NC), leave a gap between one chord expression's end and the next one's start.</p>
+<p>If a statement begins with a chord expression it must contain only chord expressions.</p>
+<h2><a class="header" href="#chord-expressions" id="chord-expressions">Chord Expressions</a></h2>
+<h3><a class="header" href="#start-and-end-component-aka-location" id="start-and-end-component-aka-location">Start and End Component (aka location)</a></h3>
+<p>A chord's location can be expressed as an integer if the note begins/ends on the beat or a float if the note begins/ends on a subdivision of the beat.
+These are divisions of the note expressed as a float. For example, a dotted quarter note: <code>1:V^7b5:2.5</code>.</p>
+<p>For reference, the following table shows common float values:</p>
+<table><thead><tr><th>Name</th><th>Float</th></tr></thead><tbody>
+<tr><td>𝅘𝅥𝅯 16th triplet</td><td>0.167</td></tr>
+<tr><td>𝅘𝅥𝅯 16th</td><td>0.25</td></tr>
+<tr><td>𝅘𝅥𝅮 8th triplet</td><td>0.33</td></tr>
+<tr><td>𝅘𝅥𝅮 8th</td><td>0.5</td></tr>
+<tr><td>𝅘𝅥𝅯𝅭 dotted 16th</td><td>0.375</td></tr>
+<tr><td>𝅘𝅥𝅮𝅭 dotted 8th</td><td>0.75</td></tr>
+</tbody></table>
+<p>Off-beat chords are not very common, even in jazz, beyond the 8th note.
+A 2-bar excerpt from Wayne Shorter's &quot;Armageddon&quot; shows a common off-beat rhythm:</p>
+<pre><code>$ Key is not marked, assuming B7 -&gt; E7 = E mixolydian
+$ :: means &quot;continue last chord for a full measure&quot;
+1:I^7 2.5:bII^7 4.5:IV^7#11
+::
+</code></pre>
+<p>Two chords can overlap; the second starts at the same location as the end of the first.
+That is, you can explicitly state the end location to be the same as the next chord, but it optional.
+It would be the same result to omit it.</p>
+<p>Chords can span the bar line, as shown in the example above.
+If the chord carries over the bar  line, but is not a full measure chord, simply add the next chord, e.g. <code>:: 3:V^7</code></p>
+<p>If a chord is valid for the entire measure, simply write the triad and additions omitting start and end values.
+For example: <code>V^7b5</code> or <code>ii^7</code></p>
 <h2><a class="header" href="#triad-component" id="triad-component">Triad Component</a></h2>
 <p>This is the RNA portion of the measure statement. The options here are relatively limited. It consists of a roman numeral between 1 and 7, with an optional flat or sharp alteration prefix. For example <code>bVII</code> or <code>iv</code>. Capital letters denotes a major triad, lower case a minor triad.</p>
 <blockquote>
@@ -375,12 +422,11 @@ C     C#/Db D     D#/Eb E     F     F#/Gb G     G#/Ab A     A#/Bb B
 I           II          III   IV          V           VI          VII
 </code></pre>
 <p>For each tone not in the diatonic scale, the root can be written using either a flat or sharp prefix. Again, it is typical to decide this based on the current key center. For flat keys, prefer the flat prefix and for sharp keys, prefer the sharp prefix. Both chords are otherwise equivalent.</p>
-<h1><a class="header" href="#start-and-end" id="start-and-end">Start and End</a></h1>
-<h1><a class="header" href="#rna-tokens" id="rna-tokens">RNA Tokens</a></h1>
-<h1><a class="header" href="#additions-and-alterations-1" id="additions-and-alterations-1">Additions and Alterations</a></h1>
-<h1><a class="header" href="#inversions" id="inversions">Inversions</a></h1>
-<h1><a class="header" href="#slash-chords-1" id="slash-chords-1">Slash Chords</a></h1>
-<h1><a class="header" href="#superimposed-chords-1" id="superimposed-chords-1">Superimposed Chords</a></h1>
+<h3><a class="header" href="#additions-and-alterations-1" id="additions-and-alterations-1">Additions and Alterations</a></h3>
+<h3><a class="header" href="#inversions" id="inversions">Inversions</a></h3>
+<h3><a class="header" href="#slash-chords-1" id="slash-chords-1">Slash Chords</a></h3>
+<h3><a class="header" href="#superimposed-chords-1" id="superimposed-chords-1">Superimposed Chords</a></h3>
+<h1><a class="header" href="#superimposed-chords-2" id="superimposed-chords-2">Superimposed Chords</a></h1>
 <h1><a class="header" href="#repeats-1" id="repeats-1">Repeats</a></h1>
 <h1><a class="header" href="#jumps-1" id="jumps-1">Jumps</a></h1>
 

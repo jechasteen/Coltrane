@@ -12,27 +12,27 @@ We have an entry point: the first measure. From there we proceed measure by meas
 ## Repeats
 
 There are two kinds of repeats that the language can express: bar line repeat and branching repeat.
-A bar line repeat looks something like `||:  :||` and results in a simple loop.
+A bar line repeat looks something like 𝄆𝄚𝄚𝄚𝄇 `||:   :||` and results in a simple loop.
 A branching repeat uses the same bar line notation but has different endings, marked above the staff with numbered brackets.
 A composition can have any number of repeats and any number of branches. 
 Thankfully, most music can be expressed with simple control flow, but the language supports arbitrary levels of nested repeats.
-If repeats are nested inside of each other, they resolve in a similar manner to parentheses, e.g. `(()(()))`
+If repeats are nested inside of each other, they resolve in a similar manner to parentheses, e.g. `( () (()) )`.
 The interpreter will error if the repeats provided in the source do not resolve.
 
 ## Jumps
 
 The language provides a jump statement that causes the control flow to jump to the specified measure, optionally an arbitrary number of times.
-In musical notation this construct is known as *del signo al coda*, *del capo al fine*, etc.
+In musical notation this construct is known as *dal signo al coda*, *da capo al fine*, etc.
 If our jump takes us to a point prior to any *repeat* expression, the repeats will be reset to their original state unless specified.
 
-Creating a *del signo al coda* requires:
+Creating a *dal signo al coda* requires:
 
-|                                                              |             |
-| ------------------------------------------------------------ | ----------- |
-| 1. Jump that must be skipped once to activate                | *al coda*   |
-| 2. Jump to a point in the progression prior to the *al coda* | *del signo* |
-| 3. Target of 1                                               | *coda*      |
-| 4. Target of 2                                               | *signo*     |
+|                                                              |               |
+| ------------------------------------------------------------ | ------------- |
+| 1. Jump that may be skipped once to activate                 | *al coda*     |
+| 2. Jump to a point in the progression prior to the *al coda* | 𝄉 *del signo* |
+| 3. Target of 1                                               | 𝄌 *coda*      |
+| 4. Target of 2                                               | 𝄋 *signo*     |
 
 A jump can be set to jump any number of times, and a target will simply keep receiving it.
 It could also be set to only jump on the nth pass.

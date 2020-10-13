@@ -93,7 +93,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="../introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="../introduction/modality.html"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="../introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="../introduction/additions_and_alterations.html"><strong aria-hidden="true">5.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="../introduction/control_flow_mechanisms.html"><strong aria-hidden="true">6.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="../specification/file_format.html"><strong aria-hidden="true">7.</strong> File Format</a></li><li class="chapter-item expanded "><a href="../specification/metadata.html"><strong aria-hidden="true">8.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="../specification/the_changes.html" class="active"><strong aria-hidden="true">9.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="../specification/measure_statements.html"><strong aria-hidden="true">10.</strong> Measure Statements Overview</a></li><li class="chapter-item expanded "><a href="../specification/start_and_end.html"><strong aria-hidden="true">11.</strong> Start and End</a></li><li class="chapter-item expanded "><a href="../specification/rna_tokens.html"><strong aria-hidden="true">12.</strong> RNA Tokens</a></li><li class="chapter-item expanded "><a href="../specification/additions_and_alterations.html"><strong aria-hidden="true">13.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="../specification/inversions.html"><strong aria-hidden="true">14.</strong> Inversions</a></li><li class="chapter-item expanded "><a href="../specification/slash_chords.html"><strong aria-hidden="true">15.</strong> Slash Chords</a></li><li class="chapter-item expanded "><a href="../specification/superimposed_chords.html"><strong aria-hidden="true">16.</strong> Superimposed Chords</a></li><li class="chapter-item expanded "><a href="../specification/repeats.html"><strong aria-hidden="true">17.</strong> Repeats</a></li><li class="chapter-item expanded "><a href="../specification/jumps.html"><strong aria-hidden="true">18.</strong> Jumps</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li><li class="chapter-item expanded affix "><li class="part-title">Conclusion</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="../introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="../introduction/modality.html"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="../introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="../introduction/additions_and_alterations.html"><strong aria-hidden="true">5.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="../introduction/control_flow_mechanisms.html"><strong aria-hidden="true">6.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="../specification/file_format.html"><strong aria-hidden="true">7.</strong> File Format</a></li><li class="chapter-item expanded "><a href="../specification/metadata.html"><strong aria-hidden="true">8.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="../specification/the_changes.html" class="active"><strong aria-hidden="true">9.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="../specification/measure_statements.html"><strong aria-hidden="true">10.</strong> Measure Statements and Chord Expressions</a></li><li class="chapter-item expanded "><a href="../specification/superimposed_chords.html"><strong aria-hidden="true">11.</strong> Superimposed Chords</a></li><li class="chapter-item expanded "><a href="../specification/repeats.html"><strong aria-hidden="true">12.</strong> Repeats</a></li><li class="chapter-item expanded "><a href="../specification/jumps.html"><strong aria-hidden="true">13.</strong> Jumps</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li><li class="chapter-item expanded affix "><li class="part-title">Conclusion</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -160,11 +160,27 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#the-changes" id="the-changes">The Changes</a></h1>
-<p>This section is where language itself is used.
-Each line represents a measure in the song, meaning that the song is linebreak delimited.
-It is required that there be no more than one <em>Measure</em> statement per line.
-There can be any number of <em>Chord</em> expressions within that line. Each line within the changes section is a discrete statement.
-These statements can either be control flow or measures.</p>
+<p>This section is where the Coltrane language itself is used.
+The changes is line break delimited, each line constitutes a <strong>statement</strong>.
+These statements can be measures, control flow, or comments</p>
+<p>It is required that there be no more than one <em>measure</em> statement per line, but there can be any number of <em>chord</em> expressions within that line.</p>
+<p>These statements can either be control flow or measures.</p>
+<h2><a class="header" href="#statement-vs-expression" id="statement-vs-expression">Statement vs Expression</a></h2>
+<p>Just as in programming languages, Coltrane makes a distinction between a statement and an expression.
+Simply put, an statement is composed of an expression or multiple expressions.</p>
+<p>A control flow expression is statement composed of exactly 1 expression.
+Many chord expressions can be combined in a single line to form 1 measure statement.</p>
+<p>The distinction is not important for Coltrane composers, but it bears mentioning because of the importance of the line break.
+For the composer, it suffices to understand the importance of statements each being on their own line.</p>
+<h2><a class="header" href="#comments" id="comments">Comments</a></h2>
+<p>Coltrane supports single line comments marked by a <code>$</code> at the beginning of the line.
+Anything after the <code>$</code> is disregarded by the parser.
+A comment can be used in any part of the source file, not just in <code>[changes]</code>.</p>
+<pre><code>[changes]
+$ introduction: bass line
+1:bVII7
+1:vi
+</code></pre>
 
                     </main>
 
