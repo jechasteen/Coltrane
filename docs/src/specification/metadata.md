@@ -10,9 +10,10 @@ by=Dizzy Gillespie
 meter=4/4
 ```
 
-Optional Fields
+Optional Fields:
 ```
-key=
+key=F
 mode=Mixolydian
-
 ```
+
+Each line must be in the format [key]=[value], but it also supports spaces before and after the equals: [key] = [value].
