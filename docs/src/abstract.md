@@ -16,4 +16,6 @@ For instance, support could be added for two syntactically different ways to wri
 Although there is a wealth of jazz education literature in the form of method books, etudes, and play-a-longs, there is yet an opportunity to further advance pedagogy with computing power.
 The computer can do some of the thinking, which leaves more time for the woodshed.
 Developers could theoretically use the language interpreter to create an infinite number of exercises based on a chord progression!
-John Coltrane, for the uninitiated, was a saxophonist who they say practiced 12 hours a day and was 20 feet tall. The motivation behind the development of this language is to help us to find new relationships between chords and musical lines **by playing our  instruments**.
+
+John Coltrane, for the uninitiated, was a saxophonist who they say practiced 12 hours a day and was 20 feet tall.
+The motivation behind the development of this language is to help us to find new relationships between chords and musical lines **by playing our  instruments**.
