@@ -23,6 +23,8 @@
 
 # Implementation
 
+- [Data Structure](./implementation/data_structure.md)
+
 # Use Case
 
 # Conclusion
