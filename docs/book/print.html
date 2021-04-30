@@ -28,7 +28,9 @@
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
+        
         <link rel="stylesheet" href="css/print.css" media="print">
+        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
@@ -95,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="introduction/modality.html"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="introduction/additions_and_alterations.html"><strong aria-hidden="true">5.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="introduction/control_flow_mechanisms.html"><strong aria-hidden="true">6.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="specification/file_format.html"><strong aria-hidden="true">7.</strong> File Format</a></li><li class="chapter-item expanded "><a href="specification/metadata.html"><strong aria-hidden="true">8.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="specification/the_changes.html"><strong aria-hidden="true">9.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="specification/measure_statements.html"><strong aria-hidden="true">10.</strong> Measure Statements and Chord Expressions</a></li><li class="chapter-item expanded "><a href="specification/superimposed_chords.html"><strong aria-hidden="true">11.</strong> Superimposed Chords</a></li><li class="chapter-item expanded "><a href="specification/repeats.html"><strong aria-hidden="true">12.</strong> Repeats</a></li><li class="chapter-item expanded "><a href="specification/jumps.html"><strong aria-hidden="true">13.</strong> Jumps</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li><li class="chapter-item expanded affix "><li class="part-title">Conclusion</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="introduction/modality.html"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="introduction/additions_and_alterations.html"><strong aria-hidden="true">5.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="introduction/control_flow_mechanisms.html"><strong aria-hidden="true">6.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="specification/file_format.html"><strong aria-hidden="true">7.</strong> File Format</a></li><li class="chapter-item expanded "><a href="specification/metadata.html"><strong aria-hidden="true">8.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="specification/the_changes.html"><strong aria-hidden="true">9.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="specification/measure_statements.html"><strong aria-hidden="true">10.</strong> Measure Statements and Chord Expressions</a></li><li class="chapter-item expanded "><a href="specification/superimposed_chords.html"><strong aria-hidden="true">11.</strong> Superimposed Chords</a></li><li class="chapter-item expanded "><a href="specification/repeats.html"><strong aria-hidden="true">12.</strong> Repeats</a></li><li class="chapter-item expanded "><a href="specification/jumps.html"><strong aria-hidden="true">13.</strong> Jumps</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded "><a href="implementation/data_structure.html"><strong aria-hidden="true">14.</strong> Data Structure</a></li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li><li class="chapter-item expanded affix "><li class="part-title">Conclusion</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -130,9 +132,11 @@
                     <h1 class="menu-title"></h1>
 
                     <div class="right-buttons">
+                        
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        
                         
                     </div>
                 </div>
@@ -161,7 +165,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#abstract" id="abstract">Abstract</a></h1>
+                        <h1 id="abstract"><a class="header" href="#abstract">Abstract</a></h1>
 <p>This paper describes a language for expressing the abstracted chord progression and linear control flow of musical compositions.
 Coltrane is written in a simple, human-readable plain text format using <a href="https://en.wikipedia.org/wiki/Roman_numeral_analysis">roman numeral analysis (RNA)</a> tokens and control flow structures.
 Melodic content is beyond the scope of the language.</p>
@@ -175,32 +179,33 @@ This, of course, does not preclude future rule additions and/or alterations.
 For instance, support could be added for two syntactically different ways to write the same chord expression.</p>
 <p>Although there is a wealth of jazz education literature in the form of method books, etudes, and play-a-longs, there is yet an opportunity to further advance pedagogy with computing power.
 The computer can do some of the thinking, which leaves more time for the woodshed.
-Developers could theoretically use the language interpreter to create an infinite number of exercises based on a chord progression!
-John Coltrane, for the uninitiated, was a saxophonist who they say practiced 12 hours a day and was 20 feet tall. The motivation behind the development of this language is to help us to find new relationships between chords and musical lines <strong>by playing our  instruments</strong>.</p>
-<h1><a class="header" href="#music-theory-primer" id="music-theory-primer">Music Theory Primer</a></h1>
+Developers could theoretically use the language interpreter to create an infinite number of exercises based on a chord progression!</p>
+<p>John Coltrane, for the uninitiated, was a saxophonist who they say practiced 12 hours a day and was 20 feet tall.
+The motivation behind the development of this language is to help us to find new relationships between chords and musical lines <strong>by playing our  instruments</strong>.</p>
+<h1 id="music-theory-primer"><a class="header" href="#music-theory-primer">Music Theory Primer</a></h1>
 <p>Feel free to skip this chapter if you have an intermediate knowledge of music theory.
 This section is a glossary that will be linked to throughout the paper, so you may skip this section and follow the links back when needed.</p>
-<h2><a class="header" href="#chord-progression" id="chord-progression">Chord progression</a></h2>
-<h2><a class="header" href="#chromatic" id="chromatic">Chromatic</a></h2>
+<h2 id="chord-progression"><a class="header" href="#chord-progression">Chord progression</a></h2>
+<h2 id="chromatic"><a class="header" href="#chromatic">Chromatic</a></h2>
 <p>Refers to the scale built upon all 12 tones.
 Can also be used in reference to melodic passages or to the notes outside of a scale.</p>
-<h2><a class="header" href="#degree-of-the-scale" id="degree-of-the-scale">Degree of the scale</a></h2>
+<h2 id="degree-of-the-scale"><a class="header" href="#degree-of-the-scale">Degree of the scale</a></h2>
 <p>Each note of the scale is numbered 1-7.
 E.G., in the key of C major, A is the sixth degree.</p>
-<h2><a class="header" href="#diatonic" id="diatonic">Diatonic</a></h2>
+<h2 id="diatonic"><a class="header" href="#diatonic">Diatonic</a></h2>
 <p>The notes in a scale, as opposed to the <em>chromatic</em> notes in between.</p>
-<h2><a class="header" href="#key" id="key">Key</a></h2>
-<h2><a class="header" href="#resolve-one-chord-to-another" id="resolve-one-chord-to-another">Resolve one chord to another</a></h2>
-<h2><a class="header" href="#scale" id="scale">Scale</a></h2>
-<h2><a class="header" href="#slash-chords" id="slash-chords">Slash chords</a></h2>
+<h2 id="key"><a class="header" href="#key">Key</a></h2>
+<h2 id="resolve-one-chord-to-another"><a class="header" href="#resolve-one-chord-to-another">Resolve one chord to another</a></h2>
+<h2 id="scale"><a class="header" href="#scale">Scale</a></h2>
+<h2 id="slash-chords"><a class="header" href="#slash-chords">Slash chords</a></h2>
 <p>Explicitly states the lowest note in a scale.
 Can be used to create an inversion, to use a bass note outside the chord, or to create the impression of a superimposed chord.</p>
-<h2><a class="header" href="#superimposed-chords" id="superimposed-chords">Superimposed Chords</a></h2>
+<h2 id="superimposed-chords"><a class="header" href="#superimposed-chords">Superimposed Chords</a></h2>
 <p>Literally any two chords at the same time.
 Chords may share notes, but it is not required.</p>
-<h2><a class="header" href="#triad" id="triad">Triad</a></h2>
-<h2><a class="header" href="#wholetone-and-semitone" id="wholetone-and-semitone">Wholetone and Semitone</a></h2>
-<h1><a class="header" href="#natural-triads" id="natural-triads">Natural Triads</a></h1>
+<h2 id="triad"><a class="header" href="#triad">Triad</a></h2>
+<h2 id="wholetone-and-semitone"><a class="header" href="#wholetone-and-semitone">Wholetone and Semitone</a></h2>
+<h1 id="natural-triads"><a class="header" href="#natural-triads">Natural Triads</a></h1>
 <p>RNA provides a method of abstracting a chord progression away from the key it was composed in.
 Each degree of the scale has an associated triad that is built by stacking diatonic thirds upon the root.
 We then give this triad a Roman numeral to represent its numerical degree of the scale.</p>
@@ -226,7 +231,7 @@ All other chords are described as variants of the basic major and minor triad.</
 The language provides easy additions and alterations in a syntax based upon actual charts and pedagogical materials.
 While its purpose is to aid in the analysis of tonal music, it is not opinionated.
 What Coltrane provides is a <strong>data structure and api</strong>, not an interpreter, per se.</p>
-<h1><a class="header" href="#modality" id="modality">Modality</a></h1>
+<h1 id="modality"><a class="header" href="#modality">Modality</a></h1>
 <p>Looking at the key signature, for many charts, doesn't tell the entire story.
 Each key has 7 degrees, each of which is a key in its own right.
 We call these keys modes.</p>
@@ -251,7 +256,7 @@ Whether or not to use a mode is left to the discretion of the Coltrane composer,
 <tr><td><code>vi</code></td><td><code>i</code></td></tr>
 <tr><td><code>vii</code></td><td><code>ii</code></td></tr>
 </tbody></table>
-<h1><a class="header" href="#unnatural-triads" id="unnatural-triads">Unnatural Triads</a></h1>
+<h1 id="unnatural-triads"><a class="header" href="#unnatural-triads">Unnatural Triads</a></h1>
 <p>In practice, chord progressions are not limited to the natural triads. 
 Composers are at liberty to choose whatever quality of triad, in whatever inversion, with whatever additions or alterations, at whatever point in the chromatic scale, at any time in a progression with complete disregard for conventional tonality.
 The roman numeral system and Coltrane do not directly address this fact. To reiterate, we are expressing a relationship to the <strong>current key</strong>.</p>
@@ -272,8 +277,8 @@ To be more specific, unless the composer specifies an explicit key change, we re
 <tr><td><code>I</code></td><td><code>#I/bII</code></td><td><code>II</code></td><td><code>#II/bIII</code></td><td><code>III</code></td><td><code>#III/bIV</code></td><td><code>IV</code></td><td><code>V</code></td><td><code>#V/bVI</code></td><td><code>VI</code></td><td><code>#VI/bVII</code></td><td><code>VII</code></td></tr>
 </tbody></table>
 <p>Note: The numerals above are all capital, but they could be either major or minor.</p>
-<h1><a class="header" href="#additions-and-alterations" id="additions-and-alterations">Additions and Alterations</a></h1>
-<h2><a class="header" href="#additions" id="additions">Additions</a></h2>
+<h1 id="additions-and-alterations"><a class="header" href="#additions-and-alterations">Additions and Alterations</a></h1>
+<h2 id="additions"><a class="header" href="#additions">Additions</a></h2>
 <p>Chords are not limited to three notes; we can add notes above the chord in thirds (3 or 4 semitones).
 The most common of these alterations is the 7th. We can continue upward to the 9, 11, and 13 before coming full circle.</p>
 <blockquote>
@@ -285,20 +290,20 @@ The language can be used with or without chord alterations for any tonal or non-
 <p>The reasoning behind this decision is simple and pragmatic: we intend to draw scales from these expressions, so the language forces you to be specific.
 The &quot;color&quot; of the chord and scale is based upon these extension notes, so it is very important that the language is concrete in the referencing of extension notes.
 Any chord can be spelled through alteration expressions, but for brevity and ergonomics we can omit any diatonic additions between the 7th and the last alteration.</p>
-<h2><a class="header" href="#alterations" id="alterations">Alterations</a></h2>
+<h2 id="alterations"><a class="header" href="#alterations">Alterations</a></h2>
 <p>Any note in a chord can be targeted with an alteration, whether a component of the triad or an addition.
 Adding a <code>#</code> or <code>b</code> before the degree number to raise or lower it by a semitone.
 The degree can be entered as any number 1-13, although <code>[9, 11, 13]</code> are preferred over <code>[2, 4, 6]</code>.
 This property could be use to create tones an octave +/- 1 semitone apart.</p>
 <p>An extreme example of alteration and dissonance: <code>1:IV^b5,b9,b10,#13</code>.</p>
-<h1><a class="header" href="#musics-control-flow-mechanisms" id="musics-control-flow-mechanisms">Music's Control Flow Mechanisms</a></h1>
+<h1 id="musics-control-flow-mechanisms"><a class="header" href="#musics-control-flow-mechanisms">Music's Control Flow Mechanisms</a></h1>
 <p>Musical language, much like programming languages, has flow from one point to another.
 In the case of written music, we could express this as a rigid decision tree for which every branch of the tree is reached. </p>
 <p>Coltrane, however, is not rigid.
 It has no specific requirement that all branches must be reached and does not expect the tree to be constant during runtime.
 We could reach into the program and directly alter the values contained in the data structures of our &quot;running&quot; composition.</p>
 <p>We have an entry point: the first measure. From there we proceed measure by measure until we reach a control flow statement.</p>
-<h2><a class="header" href="#repeats" id="repeats">Repeats</a></h2>
+<h2 id="repeats"><a class="header" href="#repeats">Repeats</a></h2>
 <p>There are two kinds of repeats that the language can express: bar line repeat and branching repeat.
 A bar line repeat looks something like 𝄆𝄚𝄚𝄚𝄇 <code>||:   :||</code> and results in a simple loop.
 A branching repeat uses the same bar line notation but has different endings, marked above the staff with numbered brackets.
@@ -306,7 +311,7 @@ A composition can have any number of repeats and any number of branches.
 Thankfully, most music can be expressed with simple control flow, but the language supports arbitrary levels of nested repeats.
 If repeats are nested inside of each other, they resolve in a similar manner to parentheses, e.g. <code>( () (()) )</code>.
 The interpreter will error if the repeats provided in the source do not resolve.</p>
-<h2><a class="header" href="#jumps" id="jumps">Jumps</a></h2>
+<h2 id="jumps"><a class="header" href="#jumps">Jumps</a></h2>
 <p>The language provides a jump statement that causes the control flow to jump to the specified measure, optionally an arbitrary number of times.
 In musical notation this construct is known as <em>dal signo al coda</em>, <em>da capo al fine</em>, etc.
 If our jump takes us to a point prior to any <em>repeat</em> expression, the repeats will be reset to their original state unless specified.</p>
@@ -319,7 +324,7 @@ If our jump takes us to a point prior to any <em>repeat</em> expression, the rep
 </tbody></table>
 <p>A jump can be set to jump any number of times, and a target will simply keep receiving it.
 It could also be set to only jump on the nth pass.</p>
-<h2><a class="header" href="#ending" id="ending">Ending</a></h2>
+<h2 id="ending"><a class="header" href="#ending">Ending</a></h2>
 <p>In musical notation, especially sheet music, it is simple to determine where the end is. In musical performance, the story is completely different.
 During rehearsal performers will decide how many choruses to play, how many times to repeat the head, unwritten interludes, etc.
 The language permits &quot;unwritten changes&quot; and arrangement by virtue of the code being intuitive to write.
@@ -330,13 +335,13 @@ The language doesn't directly support the idea of an infinite loop, but one coul
 The language is not concerned with the ending of the composition.
 The code is parsed and then we simply run the resulting data structure through an interpreter.
 The interpreter with come to a stopping point, whether that be the specified ending or some sort of error.</p>
-<h1><a class="header" href="#file-format" id="file-format">File Format</a></h1>
+<h1 id="file-format"><a class="header" href="#file-format">File Format</a></h1>
 <p>At a glance, Coltrane would appear to be a toml file, with its ini-style sections, but there are only two permitted headings: <code>[meta]</code> and <code>[changes]</code>.</p>
 <ul>
 <li>The file ending for the language is <code>.chg</code>, which is short for changes.</li>
 <li>The file must be in utf-8 encoding with Unix line endings.</li>
 </ul>
-<h1><a class="header" href="#metadata" id="metadata">Metadata</a></h1>
+<h1 id="metadata"><a class="header" href="#metadata">Metadata</a></h1>
 <p>A source file begins with a header that details the composition's metadata. There are required and optional fields.</p>
 <p>Required fields:</p>
 <pre><code>[meta]
@@ -349,20 +354,20 @@ meter=4/4
 mode=Mixolydian
 </code></pre>
 <p>Each line must be in the format [key]=[value], but it also supports spaces before and after the equals: [key] = [value].</p>
-<h1><a class="header" href="#the-changes" id="the-changes">The Changes</a></h1>
+<h1 id="the-changes"><a class="header" href="#the-changes">The Changes</a></h1>
 <p>This section is where the Coltrane language itself is used.
 The changes is line break delimited, each line constitutes a <strong>statement</strong>.
 These statements can be measures, control flow, or comments</p>
 <p>It is required that there be no more than one <em>measure</em> statement per line, but there can be any number of <em>chord</em> expressions within that line.</p>
 <p>These statements can either be control flow or measures.</p>
-<h2><a class="header" href="#statement-vs-expression" id="statement-vs-expression">Statement vs Expression</a></h2>
+<h2 id="statement-vs-expression"><a class="header" href="#statement-vs-expression">Statement vs Expression</a></h2>
 <p>Just as in programming languages, Coltrane makes a distinction between a statement and an expression.
 Simply put, an statement is composed of an expression or multiple expressions.</p>
 <p>A control flow expression is statement composed of exactly 1 expression.
 Many chord expressions can be combined in a single line to form 1 measure statement.</p>
 <p>The distinction is not important for Coltrane composers, but it bears mentioning because of the importance of the line break.
 For the composer, it suffices to understand the importance of statements each being on their own line.</p>
-<h2><a class="header" href="#comments" id="comments">Comments</a></h2>
+<h2 id="comments"><a class="header" href="#comments">Comments</a></h2>
 <p>Coltrane supports single line comments marked by a <code>$</code> at the beginning of the line.
 Anything after the <code>$</code> is disregarded by the parser.
 A comment can be used in any part of the source file, not just in <code>[changes]</code>.</p>
@@ -371,7 +376,7 @@ $ introduction: bass line
 1:bVII7
 1:vi
 </code></pre>
-<h1><a class="header" href="#measure-statements-and-chord-expressions" id="measure-statements-and-chord-expressions">Measure Statements and Chord Expressions</a></h1>
+<h1 id="measure-statements-and-chord-expressions"><a class="header" href="#measure-statements-and-chord-expressions">Measure Statements and Chord Expressions</a></h1>
 <p>A measure statement consists of a series of chord expressions.
 These chord expressions can be explicit, denoting the beginning and ending point, the triad, and any additions, but there are also methods for abbreviating them.</p>
 <p>The basic formula for a chord statement is:</p>
@@ -383,8 +388,8 @@ Supposing each chord is a quarter note, with a quarter rest in between we would 
 Please note that the <code>[EndLocation]</code> component is not inclusive, the chord ends <em>on</em> that beat or subdivision.
 To make a rest or no chord (NC), leave a gap between one chord expression's end and the next one's start.</p>
 <p>If a statement begins with a chord expression it must contain only chord expressions.</p>
-<h2><a class="header" href="#chord-expressions" id="chord-expressions">Chord Expressions</a></h2>
-<h3><a class="header" href="#start-and-end-component-aka-location" id="start-and-end-component-aka-location">Start and End Component (aka location)</a></h3>
+<h2 id="chord-expressions"><a class="header" href="#chord-expressions">Chord Expressions</a></h2>
+<h3 id="start-and-end-component-aka-location"><a class="header" href="#start-and-end-component-aka-location">Start and End Component (aka location)</a></h3>
 <p>A chord's location can be expressed as an integer if the note begins/ends on the beat or a float if the note begins/ends on a subdivision of the beat.
 These are divisions of the note expressed as a float. For example, a dotted quarter note: <code>1:V^7b5:2.5</code>.</p>
 <p>For reference, the following table shows common float values:</p>
@@ -410,7 +415,7 @@ It would be the same result to omit it.</p>
 If the chord carries over the bar  line, but is not a full measure chord, simply add the next chord, e.g. <code>:: 3:V^7</code></p>
 <p>If a chord is valid for the entire measure, simply write the triad and additions omitting start and end values.
 For example: <code>V^7b5</code> or <code>ii^7</code></p>
-<h2><a class="header" href="#triad-component" id="triad-component">Triad Component</a></h2>
+<h2 id="triad-component"><a class="header" href="#triad-component">Triad Component</a></h2>
 <p>This is the RNA portion of the measure statement. The options here are relatively limited. It consists of a roman numeral between 1 and 7, with an optional flat or sharp alteration prefix. For example <code>bVII</code> or <code>iv</code>. Capital letters denotes a major triad, lower case a minor triad.</p>
 <blockquote>
 <p>There is an exception in the case of the literal <code>vii</code>, which is a diminished chord diatonically. Otherwise, we denote a diminished chord with a <code>b5</code> alteration as in <code>V7b5</code></p>
@@ -422,13 +427,33 @@ C     C#/Db D     D#/Eb E     F     F#/Gb G     G#/Ab A     A#/Bb B
 I           II          III   IV          V           VI          VII
 </code></pre>
 <p>For each tone not in the diatonic scale, the root can be written using either a flat or sharp prefix. Again, it is typical to decide this based on the current key center. For flat keys, prefer the flat prefix and for sharp keys, prefer the sharp prefix. Both chords are otherwise equivalent.</p>
-<h3><a class="header" href="#additions-and-alterations-1" id="additions-and-alterations-1">Additions and Alterations</a></h3>
-<h3><a class="header" href="#inversions" id="inversions">Inversions</a></h3>
-<h3><a class="header" href="#slash-chords-1" id="slash-chords-1">Slash Chords</a></h3>
-<h3><a class="header" href="#superimposed-chords-1" id="superimposed-chords-1">Superimposed Chords</a></h3>
-<h1><a class="header" href="#superimposed-chords-2" id="superimposed-chords-2">Superimposed Chords</a></h1>
-<h1><a class="header" href="#repeats-1" id="repeats-1">Repeats</a></h1>
-<h1><a class="header" href="#jumps-1" id="jumps-1">Jumps</a></h1>
+<h3 id="additions-and-alterations-1"><a class="header" href="#additions-and-alterations-1">Additions and Alterations</a></h3>
+<h3 id="inversions"><a class="header" href="#inversions">Inversions</a></h3>
+<h3 id="slash-chords-1"><a class="header" href="#slash-chords-1">Slash Chords</a></h3>
+<h3 id="superimposed-chords-1"><a class="header" href="#superimposed-chords-1">Superimposed Chords</a></h3>
+<h1 id="superimposed-chords-2"><a class="header" href="#superimposed-chords-2">Superimposed Chords</a></h1>
+<h1 id="repeats-1"><a class="header" href="#repeats-1">Repeats</a></h1>
+<h1 id="jumps-1"><a class="header" href="#jumps-1">Jumps</a></h1>
+<h1 id="data-structure"><a class="header" href="#data-structure">Data Structure</a></h1>
+<p>The Coltrane library takes a plain text file that contains a section marked <code>[changes]</code>, which is parsed to create a tree data structure.
+Each leaf of the tree represents a customized version of the same generic object.</p>
+<p>The common functions for this generic object are</p>
+<ul>
+<li>
+<p><code>Option(NextObject)</code></p>
+</li>
+<li>
+<p><code>Option(PreviousObject)</code></p>
+</li>
+<li>
+<p><code>Do()</code> function/callbacks</p>
+<p>The do function can make changes to the underlying data structure. e.g. to remove/alter a branch after a certain number of passes.</p>
+</li>
+</ul>
+<h2 id="built-in-components"><a class="header" href="#built-in-components">Built-in Components</a></h2>
+<h3 id="chord-expression"><a class="header" href="#chord-expression">Chord Expression</a></h3>
+<h3 id="jump"><a class="header" href="#jump">Jump</a></h3>
+<h3 id=""><a class="header" href="#"></a></h3>
 
                     </main>
 

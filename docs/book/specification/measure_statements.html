@@ -26,7 +26,9 @@
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
+        
         <link rel="stylesheet" href="../css/print.css" media="print">
+        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
@@ -93,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="../introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="../introduction/modality.html"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="../introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="../introduction/additions_and_alterations.html"><strong aria-hidden="true">5.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="../introduction/control_flow_mechanisms.html"><strong aria-hidden="true">6.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="../specification/file_format.html"><strong aria-hidden="true">7.</strong> File Format</a></li><li class="chapter-item expanded "><a href="../specification/metadata.html"><strong aria-hidden="true">8.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="../specification/the_changes.html"><strong aria-hidden="true">9.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="../specification/measure_statements.html" class="active"><strong aria-hidden="true">10.</strong> Measure Statements and Chord Expressions</a></li><li class="chapter-item expanded "><a href="../specification/superimposed_chords.html"><strong aria-hidden="true">11.</strong> Superimposed Chords</a></li><li class="chapter-item expanded "><a href="../specification/repeats.html"><strong aria-hidden="true">12.</strong> Repeats</a></li><li class="chapter-item expanded "><a href="../specification/jumps.html"><strong aria-hidden="true">13.</strong> Jumps</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li><li class="chapter-item expanded affix "><li class="part-title">Conclusion</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../abstract.html">Abstract</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../introduction/music_theory.html"><strong aria-hidden="true">1.</strong> Music Theory Primer</a></li><li class="chapter-item expanded "><a href="../introduction/natural_triads.html"><strong aria-hidden="true">2.</strong> Natural Triads</a></li><li class="chapter-item expanded "><a href="../introduction/modality.html"><strong aria-hidden="true">3.</strong> Modality</a></li><li class="chapter-item expanded "><a href="../introduction/unnatural_triads.html"><strong aria-hidden="true">4.</strong> Unnatural Triads</a></li><li class="chapter-item expanded "><a href="../introduction/additions_and_alterations.html"><strong aria-hidden="true">5.</strong> Additions and Alterations</a></li><li class="chapter-item expanded "><a href="../introduction/control_flow_mechanisms.html"><strong aria-hidden="true">6.</strong> Music's Control Flow Mechanisms</a></li><li class="chapter-item expanded affix "><li class="part-title">Language Specification</li><li class="chapter-item expanded "><a href="../specification/file_format.html"><strong aria-hidden="true">7.</strong> File Format</a></li><li class="chapter-item expanded "><a href="../specification/metadata.html"><strong aria-hidden="true">8.</strong> Metadata</a></li><li class="chapter-item expanded "><a href="../specification/the_changes.html"><strong aria-hidden="true">9.</strong> The Changes</a></li><li class="chapter-item expanded "><a href="../specification/measure_statements.html" class="active"><strong aria-hidden="true">10.</strong> Measure Statements and Chord Expressions</a></li><li class="chapter-item expanded "><a href="../specification/superimposed_chords.html"><strong aria-hidden="true">11.</strong> Superimposed Chords</a></li><li class="chapter-item expanded "><a href="../specification/repeats.html"><strong aria-hidden="true">12.</strong> Repeats</a></li><li class="chapter-item expanded "><a href="../specification/jumps.html"><strong aria-hidden="true">13.</strong> Jumps</a></li><li class="chapter-item expanded affix "><li class="part-title">Implementation</li><li class="chapter-item expanded "><a href="../implementation/data_structure.html"><strong aria-hidden="true">14.</strong> Data Structure</a></li><li class="chapter-item expanded affix "><li class="part-title">Use Case</li><li class="chapter-item expanded affix "><li class="part-title">Conclusion</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -128,9 +130,11 @@
                     <h1 class="menu-title"></h1>
 
                     <div class="right-buttons">
+                        
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        
                         
                     </div>
                 </div>
@@ -159,7 +163,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#measure-statements-and-chord-expressions" id="measure-statements-and-chord-expressions">Measure Statements and Chord Expressions</a></h1>
+                        <h1 id="measure-statements-and-chord-expressions"><a class="header" href="#measure-statements-and-chord-expressions">Measure Statements and Chord Expressions</a></h1>
 <p>A measure statement consists of a series of chord expressions.
 These chord expressions can be explicit, denoting the beginning and ending point, the triad, and any additions, but there are also methods for abbreviating them.</p>
 <p>The basic formula for a chord statement is:</p>
@@ -171,8 +175,8 @@ Supposing each chord is a quarter note, with a quarter rest in between we would 
 Please note that the <code>[EndLocation]</code> component is not inclusive, the chord ends <em>on</em> that beat or subdivision.
 To make a rest or no chord (NC), leave a gap between one chord expression's end and the next one's start.</p>
 <p>If a statement begins with a chord expression it must contain only chord expressions.</p>
-<h2><a class="header" href="#chord-expressions" id="chord-expressions">Chord Expressions</a></h2>
-<h3><a class="header" href="#start-and-end-component-aka-location" id="start-and-end-component-aka-location">Start and End Component (aka location)</a></h3>
+<h2 id="chord-expressions"><a class="header" href="#chord-expressions">Chord Expressions</a></h2>
+<h3 id="start-and-end-component-aka-location"><a class="header" href="#start-and-end-component-aka-location">Start and End Component (aka location)</a></h3>
 <p>A chord's location can be expressed as an integer if the note begins/ends on the beat or a float if the note begins/ends on a subdivision of the beat.
 These are divisions of the note expressed as a float. For example, a dotted quarter note: <code>1:V^7b5:2.5</code>.</p>
 <p>For reference, the following table shows common float values:</p>
@@ -198,7 +202,7 @@ It would be the same result to omit it.</p>
 If the chord carries over the bar  line, but is not a full measure chord, simply add the next chord, e.g. <code>:: 3:V^7</code></p>
 <p>If a chord is valid for the entire measure, simply write the triad and additions omitting start and end values.
 For example: <code>V^7b5</code> or <code>ii^7</code></p>
-<h2><a class="header" href="#triad-component" id="triad-component">Triad Component</a></h2>
+<h2 id="triad-component"><a class="header" href="#triad-component">Triad Component</a></h2>
 <p>This is the RNA portion of the measure statement. The options here are relatively limited. It consists of a roman numeral between 1 and 7, with an optional flat or sharp alteration prefix. For example <code>bVII</code> or <code>iv</code>. Capital letters denotes a major triad, lower case a minor triad.</p>
 <blockquote>
 <p>There is an exception in the case of the literal <code>vii</code>, which is a diminished chord diatonically. Otherwise, we denote a diminished chord with a <code>b5</code> alteration as in <code>V7b5</code></p>
@@ -210,10 +214,10 @@ C     C#/Db D     D#/Eb E     F     F#/Gb G     G#/Ab A     A#/Bb B
 I           II          III   IV          V           VI          VII
 </code></pre>
 <p>For each tone not in the diatonic scale, the root can be written using either a flat or sharp prefix. Again, it is typical to decide this based on the current key center. For flat keys, prefer the flat prefix and for sharp keys, prefer the sharp prefix. Both chords are otherwise equivalent.</p>
-<h3><a class="header" href="#additions-and-alterations" id="additions-and-alterations">Additions and Alterations</a></h3>
-<h3><a class="header" href="#inversions" id="inversions">Inversions</a></h3>
-<h3><a class="header" href="#slash-chords" id="slash-chords">Slash Chords</a></h3>
-<h3><a class="header" href="#superimposed-chords" id="superimposed-chords">Superimposed Chords</a></h3>
+<h3 id="additions-and-alterations"><a class="header" href="#additions-and-alterations">Additions and Alterations</a></h3>
+<h3 id="inversions"><a class="header" href="#inversions">Inversions</a></h3>
+<h3 id="slash-chords"><a class="header" href="#slash-chords">Slash Chords</a></h3>
+<h3 id="superimposed-chords"><a class="header" href="#superimposed-chords">Superimposed Chords</a></h3>
 
                     </main>
 
